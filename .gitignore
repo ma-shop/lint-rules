@@ -1,0 +1,10 @@
+node_modules/
+deploy/
+dist/
+
+logs/
+**/*.log
+*.log
+
+.DS_Store
+**/.DS_Store
