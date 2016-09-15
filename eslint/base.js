@@ -49,7 +49,7 @@ module.exports = {
     'max-nested-callbacks': [ 'error', 4 ],
     'max-params': [ 'warn', 4 ],
     'max-statements': [ 'warn', 25 ],
-    // new-cap: 2,
+    'new-cap': [ 'error', { 'newIsCap': true } ],
     'new-parens': 'error',
     'no-alert': 'error',
     'no-array-constructor': 'error',
@@ -120,7 +120,7 @@ module.exports = {
       location: 'start'
     } ],
     'no-with': 'error',
-    // 'object-curly-spacing': [ 'error', 'always' ],
+    'object-curly-spacing': [ 'error', 'always' ],
     'one-var': [ 'error', {
       uninitialized: 'always',
       initialized: 'never'
