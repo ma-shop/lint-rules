@@ -32,7 +32,11 @@ module.exports = {
     'time-no-imperceptible': true,
     'unit-blacklist': [],
     'unit-case': 'lower',
-    'unit-no-unknown': true,
+    'unit-no-unknown': [ true, {
+      ignoreUnits: [
+        'x'
+      ]
+    } ],
     'value-keyword-case': 'lower',
     'value-no-vendor-prefix': true,
     'value-list-comma-newline-before': 'never-multi-line',
@@ -310,7 +314,8 @@ module.exports = {
     'media-query-list-comma-space-before': 'never',
     'at-rule-empty-line-before': [ 'always', {
       ignore: [ 'after-comment' ],
-      except: [ 'first-nested', 'blockless-after-same-name-blockless' ]
+      except: [ 'first-nested', 'blockless-after-same-name-blockless' ],
+      ignoreAtRules: [ 'include', 'extends', 'else' ]
     } ],
     'at-rule-name-case': 'lower',
     'at-rule-name-space-after': 'always',
