@@ -1,6 +1,6 @@
 {
   "name": "lint-rules",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This contains our Assets Linting Rules",
   "main": "index.js",
   "scripts": {
