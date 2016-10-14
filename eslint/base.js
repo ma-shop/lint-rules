@@ -144,12 +144,12 @@ module.exports = {
     'space-unary-ops': 'error',
     'spaced-comment': [ 'error', 'always', {
       line: {
-        markers: [ '/' ],
-        exceptions: [ '-', '+', '/' ]
+        markers: [ '/', '#', '/#' ],
+        exceptions: [ '-', '+', '/', '#' ]
       },
       block: {
-        markers: [ '!' ],
-        exceptions: [ '*' ]
+        markers: [ '!', '*#' ],
+        exceptions: [ '*', '#' ]
       }
     } ],
     'strict': [ 'off', 'global' ],
