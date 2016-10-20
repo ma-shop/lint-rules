@@ -32,8 +32,8 @@ extends:
  - `./node_modules/lint-rules/eslint/base.js` are the base linting rules that apply everywhere
  - `./node_modules/lint-rules/eslint/esnext.js` linting rules for es6+ js projects
  - `./node_modules/lint-rules/eslint/node.js` node specific linting rules
- 
- 
+
+
 ## Styles
 
 To setup your style linting just create a `.stylelintrc.yaml` file in your root directory with the following content
@@ -47,3 +47,8 @@ extends:
 
  - `lint-rules/stylelint/index.js` are the base linting rules that apply everywhere
  - `lint-rules/stylelint/scss.js` are the linting rules for scss projects
+
+
+## Contributing
+
+To start contributing just fork/clone this repo and run `make install` to install the dependencies to get started.
