@@ -1,6 +1,6 @@
 {
   "name": "lint-rules",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "This contains our Assets Linting Rules",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git@stash.marketamerica.com/scm/ui/lint-rules.git"
+    "url": "git+https://github.com/ma-shop/lint-rules.git"
   },
   "author": "",
   "license": "ISC",
