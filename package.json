@@ -1,6 +1,6 @@
 {
   "name": "lint-rules",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "This contains our Assets Linting Rules",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "eslint": "^3.8.1",
     "eslint-plugin-babel": "^3.3.0",
     "stylelint": "^7.5.0",
+    "stylelint-junit-formatter": "^0.2.0",
     "stylelint-scss": "^1.3.4"
   }
 }
