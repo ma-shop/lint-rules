@@ -6,18 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ma-shop/lint-rules.git"
-  },
-  "author": "",
+  "repository": "ma-shop/lint-rules",
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "contributors": [
+    "Mike Sither <michaels@marketamerica.com>",
+    "Trevor Brindle <tabrindle@gmail.com> (https://github.com/tabrindle)"
+  ],
   "license": "ISC",
   "dependencies": {
-    "babel-eslint": "^7.0.0",
-    "eslint": "^3.8.1",
-    "eslint-plugin-babel": "^3.3.0",
-    "stylelint": "^7.5.0",
-    "stylelint-junit-formatter": "^0.2.0",
-    "stylelint-scss": "^1.3.4"
+    "babel-eslint": "7.1.1",
+    "eslint": "3.16.0",
+    "eslint-plugin-babel": "3.16.0",
+    "eslint-plugin-babel": "4.0.1",
+    "stylelint": "7.9.0",
+    "stylelint-junit-formatter": "0.2.0",
+    "stylelint-scss": "1.4.3"
   }
 }
