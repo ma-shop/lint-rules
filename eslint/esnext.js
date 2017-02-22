@@ -54,7 +54,5 @@ module.exports = {
     'arrow-parens': 'off',
 
     'babel/no-await-in-loop': 'warn',
-
-    'array-bracket-spacing': [ 'error', 'always' ],
   }
 };
