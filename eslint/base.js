@@ -6,6 +6,8 @@ module.exports = {
     'ecmaVersion': 5
   },
   'rules': {
+    'array-bracket-spacing': [ 'error', 'always' ],
+    'arrow-parens': [ 'error', 'always' ],
     'block-scoped-var': 'error',
     'block-spacing': [ 'error', 'always' ],
     'brace-style': [ 'error' ],
@@ -121,6 +123,7 @@ module.exports = {
     } ],
     'no-with': 'error',
     'object-curly-spacing': [ 'error', 'always' ],
+    'object-shorthand': [ 'error', 'always' ],
     'one-var': [ 'error', {
       uninitialized: 'always',
       initialized: 'never'

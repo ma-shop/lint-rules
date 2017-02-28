@@ -41,17 +41,8 @@ module.exports = {
     'babel/new-cap': 'error',
     'new-cap': 'off',
 
-    'babel/array-bracket-spacing': [ 'error', 'always' ],
-    'array-bracket-spacing': 'off',
-
     'babel/object-curly-spacing': [ 'error', 'always' ],
     'object-curly-spacing': 'off',
-
-    'babel/object-shorthand': [ 'error', 'always' ],
-    'object-shorthand': 'off',
-
-    'babel/arrow-parens': [ 'error', 'always' ],
-    'arrow-parens': 'off',
 
     'babel/no-await-in-loop': 'warn',
   }
