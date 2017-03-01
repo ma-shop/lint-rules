@@ -41,20 +41,26 @@ module.exports = {
     'babel/new-cap': 'error',
     'new-cap': 'off',
 
-    'babel/array-bracket-spacing': [ 'error', 'always' ],
-    'array-bracket-spacing': 'off',
-
     'babel/object-curly-spacing': [ 'error', 'always' ],
     'object-curly-spacing': 'off',
 
-    'babel/object-shorthand': [ 'error', 'always' ],
-    'object-shorthand': 'off',
-
-    'babel/arrow-parens': [ 'error', 'always' ],
-    'arrow-parens': 'off',
-
     'babel/no-await-in-loop': 'warn',
 
-    'array-bracket-spacing': [ 'error', 'always' ],
+    'prefer-const': 'error',
+    'object-shorthand': [
+      'error',
+      'always',
+      // { 'avoidQuotes': true, 'avoidExplicitReturnArrows': true },
+    ],
+    'no-var': 'error',
+    // this should be defined but it's not working correctly
+    // 'prefer-destructuring': 'error',
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    'require-yield': 'error',
+    'rest-spread-spacing': [ 'error', 'never' ],
+    'template-curly-spacing': [ 'error', 'never' ],
+    'yield-star-spacing': [ 'error', 'before' ],
   }
 };
