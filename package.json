@@ -16,10 +16,10 @@
   "dependencies": {
     "babel-eslint": "7.1.1",
     "eslint": "3.16.0",
-    "eslint-plugin-babel": "3.16.0",
     "eslint-plugin-babel": "4.0.1",
     "stylelint": "7.9.0",
     "stylelint-junit-formatter": "0.2.0",
+    "stylelint-order": "~0.3.0",
     "stylelint-scss": "1.4.3"
   }
 }
