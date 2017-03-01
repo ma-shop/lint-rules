@@ -45,5 +45,22 @@ module.exports = {
     'object-curly-spacing': 'off',
 
     'babel/no-await-in-loop': 'warn',
+
+    'prefer-const': 'error',
+    'object-shorthand': [
+      'error',
+      'always',
+      // { 'avoidQuotes': true, 'avoidExplicitReturnArrows': true },
+    ],
+    'no-var': 'error',
+    // this should be defined but it's not working correctly
+    // 'prefer-destructuring': 'error',
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    'require-yield': 'error',
+    'rest-spread-spacing': [ 'error', 'never' ],
+    'template-curly-spacing': [ 'error', 'never' ],
+    'yield-star-spacing': [ 'error', 'before' ],
   }
 };
