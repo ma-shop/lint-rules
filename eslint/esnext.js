@@ -62,5 +62,16 @@ module.exports = {
     'rest-spread-spacing': [ 'error', 'never' ],
     'template-curly-spacing': [ 'error', 'never' ],
     'yield-star-spacing': [ 'error', 'before' ],
+    'comma-dangle': [
+        'error',
+        {
+          'arrays': 'always-multiline',
+          'objects': 'always-multiline',
+          'imports': 'always-multiline',
+          'exports': 'always-multiline',
+          'functions': 'always-multiline',
+        }
+      ],
+    ],
   }
 };
