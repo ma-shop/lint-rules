@@ -27,41 +27,16 @@ module.exports = {
       templateStrings: true,
       unicodeCodePointEscapes: true,
       globalReturn: true,
-      experimentalObjectRestSpread: true
+      experimentalObjectRestSpread: true,
     },
+    sourceType: 'module',
   },
+  extends: [ './base.js' ],
   parser: 'babel-eslint',
-  plugins: [
-    'babel'
-  ],
   rules: {
-    'babel/generator-star-spacing': [ 'off', 'before' ],
-    'generator-star-spacing': [ 'off', 'before' ],
-
-    'babel/new-cap': 'error',
-    'new-cap': 'off',
-
-    'babel/object-curly-spacing': [ 'error', 'always' ],
-    'object-curly-spacing': 'off',
-
-    'babel/no-await-in-loop': 'warn',
-
-    'prefer-const': 'error',
-    'object-shorthand': [
-      'error',
-      'always',
-      // { 'avoidQuotes': true, 'avoidExplicitReturnArrows': true },
-    ],
-    'no-var': 'error',
-    // this should be defined but it's not working correctly
-    // 'prefer-destructuring': 'error',
-    'prefer-rest-params': 'error',
-    'prefer-spread': 'error',
-    'prefer-template': 'error',
-    'require-yield': 'error',
-    'rest-spread-spacing': [ 'error', 'never' ],
-    'template-curly-spacing': [ 'error', 'never' ],
-    'yield-star-spacing': [ 'error', 'before' ],
+    'arrow-body-style': [ 'error', 'as-needed', { requireReturnForObjectLiteral: true } ],
+    'arrow-parens': [ 'error', 'always' ],
+    'arrow-spacing': 'error',
     'comma-dangle': [
       'error',
       {
@@ -70,7 +45,34 @@ module.exports = {
         'imports': 'always-multiline',
         'exports': 'always-multiline',
         'functions': 'always-multiline',
-      }
+      },
     ],
-  }
+    'generator-star-spacing': 'error',
+    'no-class-assign': 'error',
+    'no-const-assign': 'error',
+    'no-dupe-class-members': 'error',
+    'no-duplicate-imports': 'error',
+    'no-new-symbol': 'error',
+    'no-this-before-super': 'error',
+    'no-useless-computed-key': 'error',
+    'no-useless-constructor': 'error',
+    'no-useless-rename': 'error',
+    'object-shorthand': [ 'error', 'always', { avoidExplicitReturnArrows: true } ],
+    'prefer-arrow-callback': [ 'error', { allowUnboundThis: true, allowNamedFunctions: true } ],
+    'prefer-destructuring': [ 'error', { array: true, object: true }, { enforceForRenamedProperties: false } ],
+    'symbol-description': 'error',
+    'no-await-in-loop': 'error',
+    'prefer-const': [ 'error', { destructuring: 'all' } ],
+    'no-return-await': 'error',
+    'no-var': 'error',
+    'prefer-rest-params': 'error',
+    'require-await': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    'require-yield': 'error',
+    'rest-spread-spacing': [ 'error', 'never' ],
+    'template-curly-spacing': [ 'error', 'never' ],
+    'template-tag-spacing': [ 'error', 'never' ],
+    'yield-star-spacing': [ 'error', 'before' ],
+  },
 };
