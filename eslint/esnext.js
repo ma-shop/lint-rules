@@ -59,7 +59,14 @@ module.exports = {
     'no-useless-rename': 'error',
     'object-shorthand': [ 'error', 'always', { avoidExplicitReturnArrows: true } ],
     'prefer-arrow-callback': [ 'error', { allowUnboundThis: true, allowNamedFunctions: true } ],
-    'prefer-destructuring': [ 'error', { array: true, object: true }, { enforceForRenamedProperties: false } ],
+    'prefer-destructuring': [
+      'error',
+      {
+        VariableDeclarator: { array: true, object: true },
+        AssignmentExpression: { array: false, object: true },
+      },
+      { enforceForRenamedProperties: false },
+    ],
     'symbol-description': 'error',
     'no-await-in-loop': 'error',
     'prefer-const': [ 'error', { destructuring: 'all' } ],
