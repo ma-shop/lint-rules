@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    'stylelint-scss'
+    'stylelint-scss',
   ],
   rules: {
     'at-rule-no-unknown': [
@@ -20,9 +20,9 @@ module.exports = {
           'error',
           'return',
           'for',
-          'content'
-        ]
-      }
+          'content',
+        ],
+      },
     ],
     'scss/at-extend-no-missing-placeholder': true,
     'scss/at-function-pattern': '^[a-z]+(?:[a-z-]{3,})?$',
@@ -43,5 +43,5 @@ module.exports = {
     'scss/operator-no-newline-before': true,
     'scss/operator-no-unspaced': true,
     'scss/selector-no-redundant-nesting-selector': true,
-  }
+  },
 };

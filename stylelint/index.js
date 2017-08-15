@@ -37,8 +37,8 @@ module.exports = {
     'unit-case': 'lower',
     'unit-no-unknown': [ true, {
       ignoreUnits: [
-        'x'
-      ]
+        'x',
+      ],
     } ],
     'value-keyword-case': 'lower',
     'value-no-vendor-prefix': true,
@@ -56,7 +56,7 @@ module.exports = {
     'declaration-colon-space-before': 'never',
     'declaration-no-important': true,
     'declaration-block-no-duplicate-properties': [ true, {
-      ignore: [ 'consecutive-duplicates' ]
+      ignore: [ 'consecutive-duplicates' ],
     } ],
     'declaration-block-no-shorthand-property-overrides': true,
     'declaration-block-semicolon-newline-after': 'always',
@@ -74,26 +74,26 @@ module.exports = {
         { type: 'rule', selector: /(aka %foo)|^[%$]\w/ },
 
         // `&:before` (aka pseudo selectors/elements)
-        { type: 'rule', selector: /(aka &:before)|^&$|^&::?[a-z\-]+/ },
+        { type: 'rule', selector: /(aka &:before)|^&$|^&::?[a-z-]+/ },
 
         // `.foo &` nested parent selector
-        { type: 'rule', selector: /(aka .foo &)|^[\.#]?[a-z]+ &|^.+&$/ },
+        { type: 'rule', selector: /(aka .foo &)|^[.#]?[a-z]+ &|^.+&$/ },
 
         // `&.bar`, `&--zoom`, `+ .foo` compound/modifier selector
-        { type: 'rule', selector: /(aka &.foo, &--foo, + .foo)|^&[\.#][a-z]+|^&--[a-z_-]+|^[+~>]{1}.+/ },
+        { type: 'rule', selector: /(aka &.foo, &--foo, + .foo)|^&[.#][a-z]+|^&--[a-z_-]+|^[+~>]{1}.+/ },
 
         { type: 'at-rule', name: 'media' }, // `@media` media queries
         { type: 'at-rule', name: 'include', parameter: 'media' }, // `@include media` include style media query
 
         // `&__foo` bem element, `.foo` nested element
-        { type: 'rule', selector: /(aka &__foo, .foo)|^&__[a-z-_]+|^[\.#]?[a-z-_\s]+|^\*/ },
-      ]
+        { type: 'rule', selector: /(aka &__foo, .foo)|^&__[a-z-_]+|^[.#]?[a-z-_\s]+|^\*/ },
+      ],
     ],
 
     'order/declaration-block-properties-alphabetical-order': true,
     'block-closing-brace-empty-line-before': 'never',
     'block-closing-brace-newline-after': [ 'always', {
-      ignoreAtRules: [ 'if', 'else', 'else if' ]
+      ignoreAtRules: [ 'if', 'else', 'else if' ],
     } ],
     'color-named': [ 'never' ],
     'block-closing-brace-newline-before': 'always-multi-line',
@@ -127,7 +127,7 @@ module.exports = {
     'selector-list-comma-space-before': 'never',
     'rule-empty-line-before': [ 'always-multi-line', {
       except: [ 'first-nested', 'after-single-line-comment' ],
-      ignore: [ 'after-comment' ]
+      ignore: [ 'after-comment' ],
     } ],
     'media-feature-colon-space-after': 'always',
     'media-feature-colon-space-before': 'never',
@@ -143,7 +143,7 @@ module.exports = {
     'at-rule-empty-line-before': [ 'always', {
       ignore: [ 'after-comment' ],
       except: [ 'first-nested', 'blockless-after-same-name-blockless' ],
-      ignoreAtRules: [ 'include', 'extends', 'else' ]
+      ignoreAtRules: [ 'include', 'extends', 'else' ],
     } ],
     'at-rule-name-case': 'lower',
     'at-rule-name-space-after': 'always',
@@ -151,6 +151,6 @@ module.exports = {
     'at-rule-no-vendor-prefix': true,
     'at-rule-semicolon-newline-after': 'always',
     'comment-no-empty': true,
-    'comment-whitespace-inside': 'always'
-  }
+    'comment-whitespace-inside': 'always',
+  },
 };

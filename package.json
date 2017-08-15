@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.2.0",
+    "eslint": "^4.4.1",
     "stylelint": "7.9.0",
     "stylelint-junit-formatter": "0.2.0",
     "stylelint-order": "~0.3.0",
