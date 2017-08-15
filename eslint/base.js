@@ -250,4 +250,4 @@ module.exports = {
     'wrap-iife': [ 'error', 'inside' ],
     'yoda': 'error',
   },
-}
+};
