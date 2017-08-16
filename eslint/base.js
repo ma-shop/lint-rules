@@ -97,7 +97,7 @@ module.exports = {
     'max-statements': [ 'warn', 25 ],
     'multiline-ternary': [ 'error', 'never' ],
     'new-parens': 'error',
-    'newline-per-chained-call': [ 'error', { ignoreChainWithDepth: 2 } ],
+    'newline-per-chained-call': [ 'error', { ignoreChainWithDepth: 3 } ],
     'no-alert': 'error',
     'no-array-constructor': 'error',
     'no-bitwise': [ 'error', { allow: [ '~' ] } ],
