@@ -77,11 +77,14 @@ module.exports = {
     'max-depth': [ 'error', 5 ],
     'max-len': [
       'error',
-      120,
+      130,
       {
         comments: 150,
         ignoreComments: true,
         ignorePattern: '^\\s*(var|const|let)\\s.+=\\s*(?:(?:[a-z.\\[\\]\'"]+\\s+\\+)|(?:\'|"))',
+        ignoreRegExpLiterals: true,
+        // ignoreStrings: false,
+        // ignoreTemplateLiterals: false,
         ignoreTrailingComments: true,
         ignoreUrls: true,
         tabWidth: 2,
