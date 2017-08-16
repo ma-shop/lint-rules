@@ -34,7 +34,8 @@ module.exports = {
   extends: [ './base.js' ],
   parser: 'babel-eslint',
   rules: {
-    'arrow-body-style': [ 'error', 'as-needed', { requireReturnForObjectLiteral: true } ],
+    // removed until arrow-body-style becomes more flexible
+    // 'arrow-body-style': [ 'error', 'as-needed', { requireReturnForObjectLiteral: true } ],
     'arrow-parens': [ 'error', 'always' ],
     'arrow-spacing': 'error',
     'comma-dangle': [
