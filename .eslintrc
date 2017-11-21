@@ -1,8 +1,0 @@
-{
-  extends: [
-    './eslint/index.js'
-  ],
-  rules: {
-    'quote-props': 'off'
-  }
-}

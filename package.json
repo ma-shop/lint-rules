@@ -13,12 +13,24 @@
     "Trevor Brindle <tabrindle@gmail.com> (https://github.com/tabrindle)"
   ],
   "license": "ISC",
-  "dependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.4.1",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "4.*",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "lerna": "^2.5.1",
+    "prettier-eslint-cli": "~4.4.0",
     "stylelint": "7.9.0",
     "stylelint-junit-formatter": "0.2.0",
     "stylelint-order": "~0.3.0",
     "stylelint-scss": "1.4.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./packages/eslint-config-ma-shop/index.js"
+    ],
+    "rules": {
+      "quote-props": "off"
+    }
   }
 }
