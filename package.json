@@ -17,6 +17,7 @@
   "devDependencies": {
     "eslint": "4.*",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-fat-arrow-same-line": "~0.1.0",
     "eslint-plugin-import": "^2.8.0",
     "lerna": "^2.5.1",
     "prettier-eslint-cli": "~4.4.0",
@@ -26,11 +27,15 @@
     "stylelint-scss": "1.4.3"
   },
   "eslintConfig": {
-    "extends": [
-      "./packages/eslint-config-ma-shop/index.js"
-    ],
+    "extends": ["./packages/eslint-config-ma-shop/index.js"],
     "rules": {
       "quote-props": "off"
     }
+  },
+  "prettier": {
+    "listDifferent": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true
   }
 }

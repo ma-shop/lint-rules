@@ -1,54 +1,98 @@
 # lint-rules
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![David-DM](https://david-dm.org/ma-shop/lint-rules/dev-status.svg)](https://david-dm.org/ma-shop/lint-rules)
+
 This project houses all the linting rules for Market America | Shop.com
 
-## Install
+## Prettier
+
+All config packages should always be use with
+[prettier](https://prettier.io/docs/en/) which is an opinionated code formatter
+that makes our code formatting consistent without having to be nitpicky on PRs.
+This helps the person reviewing code concentrate on what the code is doing and
+not how the code is formatted.
+
+### Install
+
+We use [prettier-eslint-cli](https://www.npmjs.com/package/prettier-eslint-cli)
+to run [prettier](https://prettier.io/docs/en/) which will run `prettier`, then
+`eslint --fix`
+
+We also use
+[prettier-stylelint-formatter](https://www.npmjs.com/package/prettier-stylelint-formatter)
+to run [prettier](https://prettier.io/docs/en/) which will run `prettier` with
+`stylelint`
 
 #### npm
 
 ```bash
-npm install ma-shop/lint-rules --save-dev
+npm install prettier-eslint-cli prettier-stylelint-formatter --save-dev
 ```
 
 #### yarn
 
 ```bash
-yarn add ma-shop/lint-rules --dev
+yarn add prettier-eslint-cli prettier-stylelint-formatter --dev
 ```
 
-## Javascript
+### Makefile
 
-To setup your js linting just create a `.eslintrc.yaml` file in your root directory with the following content
+All the commands should be the same on each project for formatting code with
+[prettier](https://prettier.io), and for linting code with
+[stylelint](https://stylelint.io), and [eslint](https://eslint.org). Copy and
+paste the following commands into your project and remove `lint-style` if it's
+not needed.
 
-```yaml
-extends:
-  - './node_modules/lint-rules/eslint/index.js'
+```makefile
+# formats and lints all the files
+lint:
+	@make lint-js lint-style lint-json lint-md --jobs
 
+# formats your js code with prettier, then lints them with eslint
+lint-js:
+	@prettier-eslint '+(app|src|test)/**/*.jsx?' --write
+  @eslint --cache '+(app|src|test)/**/*.jsx?'
+
+# formats your style code with prettier, then lints them with stylelint
+lint-style:
+	@prettier-stylelint '+(app|src|test)/**/*.+(css|scss|styl)' --write
+	@stylelint '+(app|src|test)/**/*.+(css|scss|styl)' --color
+
+# formats your markdown files with prettier
+lint-md:
+	@prettier '**/*.md' --parser markdown --single-quote --write
+
+# formats your json files with prettier
+lint-json:
+	@prettier '**/*.json' --parser json --write
 ```
 
-### Avaliable files
+### package.json
 
- - `./node_modules/lint-rules/eslint/index.js` combines all the files into one
- - `./node_modules/lint-rules/eslint/base.js` are the base linting rules that apply everywhere
- - `./node_modules/lint-rules/eslint/esnext.js` linting rules for es6+ js projects
- - `./node_modules/lint-rules/eslint/node.js` node specific linting rules
+Your `package.json` file should have these configs inside of them. There
+shouldn't be a separate config file for each of these since all that does is
+just add clutter
 
-
-## Styles
-
-To setup your style linting just create a `.stylelintrc.yaml` file in your root directory with the following content
-
-```yaml
-extends:
-  - 'lint-rules/stylelint/index.js'
+```json
+"eslintConfig": {
+  "extends": [
+    "ma-shop"
+  ],
+},
+"stylelint": {
+  "extends": [
+    "ma-shop"
+  ],
+},
+"prettier": {
+  "listDifferent": true,
+  "singleQuote": true,
+  "trailingComma": "all"
+}
 ```
-
-### Avaliable files
-
- - `lint-rules/stylelint/index.js` are the base linting rules that apply everywhere
- - `lint-rules/stylelint/scss.js` are the linting rules for scss projects
-
 
 ## Contributing
 
-To start contributing just fork/clone this repo and run `make install` to install the dependencies to get started.
+To start contributing just fork/clone this repo and run `make install` to
+install the dependencies to get started.

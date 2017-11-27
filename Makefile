@@ -2,9 +2,6 @@ PATH := ./node_modules/.bin:$(PATH)
 SHELL := /bin/bash
 args = $(filter-out $@, $(MAKECMDGOALS))
 
-JS_FILES = packages/*/index.js packages/*/rules/*.js
-JSON_FILES = packages/*/*.json
-
 # installs node
 install:
 	@yarn install
@@ -27,22 +24,22 @@ deep-clean:
 reinstall:
 	@make deep-clean install
 
-# lints all the files
+# formats and lints all the files
 lint:
-	@make format
-	@eslint --cache $(JS_FILES)
+	@make lint-js lint-json lint-md --jobs
 
-# formats your code with prettier
-format:
-	@make format-js format-json --jobs
+# formats your js code with prettier, then lints them with eslint
+lint-js:
+	@prettier-eslint packages/*/index.js packages/*/rules/*.js --write
+	@eslint --cache packages/*/index.js packages/*/rules/*.js
 
-# formats your js code with prettier
-format-js:
-	@prettier-eslint $(JS_FILES) --single-quote --trailing-comma all --write
+# formats your markdown files with prettier
+lint-md:
+	@prettier --parser markdown '**/*.md' --write
 
 # formats your json files with prettier
-format-json:
-	@prettier-eslint $(JSON_FILES) --parser json --write
+lint-json:
+	@prettier --parser json '**/*.json' --write
 
 # run any tests
 test:
