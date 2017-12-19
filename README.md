@@ -56,8 +56,8 @@ lint-js:
 
 # formats your style code with prettier, then lints them with stylelint
 lint-style:
-	@prettier-stylelint '+(app|src|test)/**/*.+(css|scss|styl)' --write
-	@stylelint '+(app|src|test)/**/*.+(css|scss|styl)' --color
+	@prettier-stylelint-formatter '+(app|src|test)/**/*.+(css|scss|styl)' --write
+	@stylelint --color --cache '+(app|src|test)/**/*.+(css|scss|styl)'
 
 # formats your markdown files with prettier
 lint-md:
