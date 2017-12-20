@@ -44,3 +44,7 @@ lint-json:
 # run any tests
 test:
 	@make lint
+
+publish:
+	@make build lint --jobs
+	@lerna publish
