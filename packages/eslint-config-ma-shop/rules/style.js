@@ -76,13 +76,15 @@ module.exports = {
           'e',
           'i',
           'n',
+          'a',
+          'b',
         ],
       },
     ],
 
     // require identifiers to match the provided regular expression
     // @todo update for alexa/google/react
-    'id-match': [ 'error', '^(?:[a-z]{2,}([A-Z]{1}[a-z]+)*$)|([a-z_$]+$)' ],
+    'id-match': [ 'error', '^(?:[a-z]{2,}([A-Z]{1}[a-z]+)*$)|([a-z_$]+$)|(sha1)' ],
 
     // enforce position of line comments
     // https://eslint.org/docs/rules/line-comment-position

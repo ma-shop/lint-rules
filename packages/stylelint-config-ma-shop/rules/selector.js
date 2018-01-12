@@ -1,4 +1,4 @@
-const pattern = /^[a-z][a-z-_]+[a-z]$/;
+const pattern = /^([a-z][a-z-_]+[a-z]|t-ie[0-9])$/;
 
 module.exports = {
   rules: {

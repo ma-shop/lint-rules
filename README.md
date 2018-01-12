@@ -51,13 +51,13 @@ lint:
 
 # formats your js code with prettier, then lints them with eslint
 lint-js:
-	@prettier-eslint '+(app|src|test)/**/*.jsx?' --write
-  @eslint --cache '+(app|src|test)/**/*.jsx?'
+	@prettier-eslint '+(app|src|test)/**/*.jsx?' --write --list-different
+	@eslint --cache '+(app|src|test)/**/*.jsx?'
 
 # formats your style code with prettier, then lints them with stylelint
 lint-style:
 	@prettier-stylelint-formatter '+(app|src|test)/**/*.+(css|scss|styl)' --write
-	@stylelint --color --cache '+(app|src|test)/**/*.+(css|scss|styl)'
+	@stylelint '+(app|src|test)/**/*.+(css|scss|styl)' --color --cache
 
 # formats your markdown files with prettier
 lint-md:
@@ -82,11 +82,10 @@ just add clutter
 },
 "stylelint": {
   "extends": [
-    "ma-shop"
+    "stylelint-config-ma-shop"
   ],
 },
 "prettier": {
-  "listDifferent": true,
   "singleQuote": true,
   "trailingComma": "all"
 }

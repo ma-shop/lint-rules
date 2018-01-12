@@ -39,6 +39,8 @@ module.exports = {
     // media feature values.
     'scss/media-feature-value-dollar-variable': 'always',
 
+    // Disallow non-CSS `@imports` in partial files.
+    'scss/partial-no-import': null,
 
     ////////////////////////////////////////////
 
@@ -59,8 +61,5 @@ module.exports = {
     // 'scss/declaration-nested-properties': 'never',
     // // Disallow nested properties of the same "namespace" be divided into multiple groups.
     // 'scss/declaration-nested-properties-no-divided-groups': true,
-
-    // // Disallow non-CSS `@imports` in partial files.
-    // 'scss/partial-no-import': true,
   },
 };

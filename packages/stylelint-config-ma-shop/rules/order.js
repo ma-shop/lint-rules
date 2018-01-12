@@ -25,6 +25,9 @@ module.exports = {
         // `&__foo` bem element, `.foo` nested element
         { type: 'rule', selector: /(aka &__foo, .foo)|^&__[a-z-_]+|^[.#]?[a-z-_\s]+|^\*/ },
       ],
+      {
+        disableFix: true,
+      },
     ],
 
     'order/properties-order': null,
