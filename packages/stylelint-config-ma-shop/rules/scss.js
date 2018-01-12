@@ -3,7 +3,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        'ignoreAtRules': [
+        ignoreAtRules: [
           'include',
           'mixin',
           'function',
@@ -55,7 +55,6 @@ module.exports = {
     // 'scss/at-if-closing-brace-newline-after': 'always-last-in-chain',
     // // Require a single space or disallow whitespace after the closing brace of @if statements.
     // 'scss/at-if-closing-brace-space-after': 'always-intermediate',
-
 
     // // Require or disallow properties with - in their names to be in a form of a nested group.
     // 'scss/declaration-nested-properties': 'never',

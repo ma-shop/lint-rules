@@ -46,5 +46,5 @@ test:
 	@make lint
 
 publish:
-	@make build lint --jobs
+	@make lint
 	@lerna publish

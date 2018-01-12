@@ -17,7 +17,10 @@ module.exports = {
         { type: 'rule', selector: /(aka .foo &)|^[.#]?[a-z]+ &|^.+&$/ },
 
         // `&.bar`, `&--zoom`, `+ .foo` compound/modifier selector
-        { type: 'rule', selector: /(aka &.foo, &--foo, + .foo)|^&[.#][a-z]+|^&--[a-z_-]+|^[+~>]{1}.+/ },
+        {
+          type: 'rule',
+          selector: /(aka &.foo, &--foo, + .foo)|^&[.#][a-z]+|^&--[a-z_-]+|^[+~>]{1}.+/,
+        },
 
         { type: 'at-rule', name: 'media' }, // `@media` media queries
         { type: 'at-rule', name: 'include', parameter: 'media' }, // `@include media` include style media query
