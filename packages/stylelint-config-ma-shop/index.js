@@ -8,4 +8,4 @@ module.exports = {
     './rules/order.js',
     './rules/scss.js',
   ].map(require.resolve),
-};
+}

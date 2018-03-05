@@ -1,4 +1,4 @@
-const pattern = /^([a-z][a-z-_]+[a-z]|t-ie[0-9])$/;
+const pattern = /^([a-z][a-z-_]+[a-z]|t-ie[0-9])$/
 
 module.exports = {
   rules: {
@@ -11,4 +11,4 @@ module.exports = {
     // Specify single colon notation for applicable pseudo-elements.
     'selector-pseudo-element-colon-notation': 'single',
   },
-};
+}

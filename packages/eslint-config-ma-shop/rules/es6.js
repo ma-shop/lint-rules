@@ -23,4 +23,4 @@ module.exports = {
     'generator-star-spacing': 'error',
   },
   plugins: [ 'fat-arrow-same-line' ],
-};
+}

@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "Base JS lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
-  "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop",
+  "repository":
+    "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

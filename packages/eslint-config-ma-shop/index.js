@@ -8,4 +8,4 @@ module.exports = {
     './rules/es6',
   ].map(require.resolve),
   rules: {},
-};
+}

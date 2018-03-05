@@ -5,4 +5,4 @@ module.exports = {
     // @todo remove when airbnb enables it
     'no-undefined': 'error',
   },
-};
+}

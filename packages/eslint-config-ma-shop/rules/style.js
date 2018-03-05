@@ -124,15 +124,16 @@ module.exports = {
     // @todo remove when airbnb enables it
     'multiline-ternary': [ 'error', 'never' ],
 
-    // enforces new line after each method call in the chain to make it
-    // more readable and easy to maintain
-    // https://eslint.org/docs/rules/newline-per-chained-call
-    'newline-per-chained-call': [ 'error', { ignoreChainWithDepth: 1 } ],
+    // this is handled by prettier in a much better way
+    'newline-per-chained-call': [ 'off' ],
 
     // disallow multiple empty lines and only one newline at the end
     'no-multiple-empty-lines': [ 'error', { max: 3, maxEOF: 1 } ],
 
-    semi: [ 'warn', 'always', { omitLastInOneLineBlock: true } ],
+    // they are pointless and serve no purpose except for a hand full of cases
+    // So save hundreds of characters per file
+    // Also they get added after transpiling
+    semi: [ 'warn', 'never' ],
 
     // require or disallow a space immediately following the // or /* in a comment
     // https://eslint.org/docs/rules/spaced-comment
@@ -179,4 +180,4 @@ module.exports = {
       },
     ],
   },
-};
+}

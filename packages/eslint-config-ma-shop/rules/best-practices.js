@@ -6,26 +6,9 @@ module.exports = {
     // @todo remove when airbnb enables it
     complexity: [ 'error', 11 ],
 
-    // disallow reassignment of function parameters
-    // disallow parameter object manipulation except for specific exclusions
-    // rule: https://eslint.org/docs/rules/no-param-reassign.html
-    'no-param-reassign': [
-      'error',
-      {
-        props: true,
-        ignorePropertyModificationsFor: [
-          'prev', // for reduce accumulators
-          'acc', // for reduce accumulators
-          'e', // for e.returnvalue
-          'ctx', // for Koa routing
-          'req', // for Express requests
-          'request', // for Express requests
-          'res', // for Express responses
-          'response', // for Express responses
-          '$scope', // for Angular 1 scopes
-        ],
-      },
-    ],
+    // This happens way to often with option defaults so it's turned off
+    'no-param-reassign': 'off',
+
     // disallow unmodified conditions of loops
     // https://eslint.org/docs/rules/no-unmodified-loop-condition
     'no-unmodified-loop-condition': 'error',
@@ -51,4 +34,4 @@ module.exports = {
     // https://eslint.org/docs/rules/yield-star-spacing
     'yield-star-spacing': [ 'error', 'before' ],
   },
-};
+}

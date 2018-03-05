@@ -6,4 +6,4 @@ module.exports = {
     // disallow use of synchronous methods
     'no-sync': 'error', // unless there's a good reason to use it
   },
-};
+}

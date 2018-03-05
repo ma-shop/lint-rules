@@ -61,4 +61,4 @@ module.exports = {
     // // Disallow nested properties of the same "namespace" be divided into multiple groups.
     // 'scss/declaration-nested-properties-no-divided-groups': true,
   },
-};
+}
