@@ -1,0 +1,32 @@
+{
+  "name": "eslint-config-ma-shop",
+  "version": "0.0.2",
+  "description": "Base JS lint rules for marketamerica | SHOP.COM",
+  "main": "index.js",
+  "repository":
+    "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "MIT",
+  "dependencies": {
+    "eslint-config-airbnb-base": "~12.1.0",
+    "eslint-plugin-fat-arrow-same-line": "~0.1.0",
+    "eslint-plugin-import": "~2.8.0"
+  },
+  "devDependencies": {
+    "eslint": "4.*"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "ma",
+    "marketamerica",
+    "shop",
+    "ma-shop",
+    "javascript",
+    "styleguide"
+  ]
+}
