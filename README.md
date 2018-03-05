@@ -51,13 +51,13 @@ lint:
 
 # formats your js code with prettier, then lints them with eslint
 lint-js:
-	@prettier-eslint '+(app|src|test)/**/*.jsx?' --write --list-different
-	@eslint --cache '+(app|src|test)/**/*.jsx?'
+	@prettier-eslint '+(app|src|test)/**/*.{js,jsx}' --write --list-different
+	@eslint --cache '+(app|src|test)/**/*.{js,jsx}'
 
 # formats your style code with prettier, then lints them with stylelint
 lint-style:
-	@prettier-stylelint-formatter '+(app|src|test)/**/*.+(css|scss|styl)' --write
-	@stylelint '+(app|src|test)/**/*.+(css|scss|styl)' --color --cache
+	@prettier-stylelint-formatter '+(app|src|test)/**/*.+{css,scss,styl}' --write
+	@stylelint '+(app|src|test)/**/*.{css,scss,styl}' --color --cache
 
 # formats your markdown files with prettier
 lint-md:
@@ -68,6 +68,26 @@ lint-json:
 	@prettier '**/*.json' --parser json --write
 ```
 
+### Lint staged
+
+Linting staged files is the easiest way to fix linting errors before it gets to
+a pull request this keeps all the code consistent. We currently use
+[husky](https://www.npmjs.com/package/husky) for a pre commit hook, and
+[lint-staged](https://www.npmjs.com/package/lint-staged) to pull the files that
+are staged for the commit.
+
+#### npm
+
+```bash
+npm install husky lint-staged --save-dev
+```
+
+#### yarn
+
+```bash
+yarn add husky lint-staged --dev
+```
+
 ### package.json
 
 Your `package.json` file should have these configs inside of them. There
@@ -75,19 +95,30 @@ shouldn't be a separate config file for each of these since all that does is
 just add clutter
 
 ```json
-"eslintConfig": {
-  "extends": [
-    "ma-shop"
-  ],
-},
-"stylelint": {
-  "extends": [
-    "stylelint-config-ma-shop"
-  ],
-},
-"prettier": {
-  "singleQuote": true,
-  "trailingComma": "all"
+{
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["prettier-eslint --write", "eslint --fix", "git add"],
+    "*.scss": [
+      "prettier --parser scss --single-quote --write",
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.md": ["prettier --parser markdown --single-quote --write", "git add"],
+    "*.json": ["prettier --parser json --write", "git add"]
+  },
+  "eslintConfig": {
+    "extends": ["ma-shop"]
+  },
+  "stylelint": {
+    "extends": ["stylelint-config-ma-shop"]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
 }
 ```
 
