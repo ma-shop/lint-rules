@@ -117,7 +117,9 @@ just add clutter
   },
   "prettier": {
     "singleQuote": true,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "semi": false,
+    "arrowParens": "always"
   }
 }
 ```
