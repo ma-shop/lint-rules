@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ma-shop-react",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "React lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
   "repository":
