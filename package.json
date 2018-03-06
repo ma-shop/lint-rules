@@ -48,7 +48,6 @@
     "listDifferent": true,
     "singleQuote": true,
     "trailingComma": "all",
-    "semi": false,
-    "arrowParens": "always"
+    "semi": false
   }
 }

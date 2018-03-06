@@ -5,5 +5,7 @@ module.exports = {
     'eslint-config-airbnb/rules/react-a11y',
     'eslint-config-ma-shop',
   ].map(require.resolve),
-  rules: {},
+  rules: {
+    'multiline-ternary': 'off',
+  },
 }
