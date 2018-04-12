@@ -1,7 +1,6 @@
 module.exports = {
   env: {
     jest: true,
-    'react-native/react-native': true,
   },
   globals: {
     __DEV__: true,
