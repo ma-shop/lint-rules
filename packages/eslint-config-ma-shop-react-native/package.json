@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ma-shop-react-native",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "description": "React Native lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
   "repository":
