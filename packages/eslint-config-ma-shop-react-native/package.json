@@ -11,7 +11,7 @@
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "MIT",
   "dependencies": {
-    "eslint-config-ma-shop-react": "^0.0.2",
+    "eslint-config-ma-shop-react": "^0.1.9",
     "eslint-plugin-react-native": "~3.1.0"
   },
   "keywords": [
