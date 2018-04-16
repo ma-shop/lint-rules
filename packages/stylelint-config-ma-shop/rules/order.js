@@ -26,7 +26,10 @@ module.exports = {
         { type: 'at-rule', name: 'include', parameter: 'media' }, // `@include media` include style media query
 
         // `&__foo` bem element, `.foo` nested element
-        { type: 'rule', selector: /(aka &__foo, .foo)|^&__[a-z-_]+|^[.#]?[a-z-_\s]+|^\*/ },
+        {
+          type: 'rule',
+          selector: /(aka &__foo, .foo)|^&__[a-z-_]+|^[.#]?[a-z-_\s]+|^\*/,
+        },
       ],
       {
         disableFix: true,

@@ -6,6 +6,7 @@ args = $(filter-out $@, $(MAKECMDGOALS))
 install:
 	@yarn install
 	@lerna bootstrap
+	@make lint-json
 
 # cleans the dist directory of every package
 clean:

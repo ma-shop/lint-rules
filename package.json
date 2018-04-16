@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "babel-eslint": "~8.2.3",
     "eslint": "4.*",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-fat-arrow-same-line": "~0.1.0",
