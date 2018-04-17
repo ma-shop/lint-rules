@@ -53,5 +53,14 @@ module.exports = {
     // enforce spacing around the * in yield* expressions
     // https://eslint.org/docs/rules/yield-star-spacing
     'yield-star-spacing': [ 'error', 'before' ],
+
+    // enforces return statements in callbacks of array's methods
+    // https://eslint.org/docs/rules/array-callback-return
+    // @todo remove when this is published
+    'array-callback-return': [ 'error', { allowImplicit: true } ],
+
+    // disallow else after a return in an if
+    // @todo remove when this is published
+    'no-else-return': [ 'error', { allowElseIf: false } ],
   },
 }

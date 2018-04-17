@@ -3,7 +3,7 @@ module.exports = {
     // enforce line breaks after opening and before closing array brackets
     // https://eslint.org/docs/rules/array-bracket-newline
     // @todo remove when airbnb enables it
-    'array-bracket-newline': [ 'error', { multiline: true, minItems: 4 } ],
+    'array-bracket-newline': [ 'error', { multiline: true, minItems: 4 } ], // alternative 'consistent'
 
     // enforce line breaks between array elements
     // https://eslint.org/docs/rules/array-element-newline
@@ -169,6 +169,19 @@ module.exports = {
       },
     ],
 
+    // require or disallow an empty line between class members
+    // https://eslint.org/docs/rules/lines-between-class-members
+    // @todo remove this when it's published next major release
+    'lines-between-class-members': [ 'error', 'always', { exceptAfterSingleLine: false } ],
+
+    // enforce a particular style for multiline comments
+    // https://eslint.org/docs/rules/multiline-comment-style
+    'multiline-comment-style': 'off',
+
+    // specify whether double or single quotes should be used in JSX attributes
+    // https://eslint.org/docs/rules/jsx-quotes
+    'jsx-quotes': [ 'error', 'prefer-double' ],
+
     // require or disallow space before function opening parenthesis
     // https://eslint.org/docs/rules/space-before-function-paren
     'space-before-function-paren': [
@@ -179,5 +192,89 @@ module.exports = {
         asyncArrow: 'always',
       },
     ],
+
+    // disallow else after a return in an if
+    // https://eslint.org/docs/rules/no-else-return
+    // @todo remove this when it's published
+    'no-else-return': [ 'error', { allowElseIf: true } ],
+
+    // Enforce the location of arrow function bodies with implicit returns
+    // https://eslint.org/docs/rules/implicit-arrow-linebreak
+    // @todo remove this when it's published
+    'implicit-arrow-linebreak': [ 'error', 'beside' ],
+
+    // this option sets a specific tab width for your code
+    // https://eslint.org/docs/rules/indent
+    // @todo remove this when it's published
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+        VariableDeclarator: 1,
+        outerIIFEBody: 1,
+        // MemberExpression: null,
+        FunctionDeclaration: {
+          parameters: 1,
+          body: 1,
+        },
+        FunctionExpression: {
+          parameters: 1,
+          body: 1,
+        },
+        CallExpression: {
+          arguments: 1,
+        },
+        ArrayExpression: 1,
+        ObjectExpression: 1,
+        ImportDeclaration: 1,
+        flatTernaryExpressions: false,
+        // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
+        ignoredNodes: [
+          'JSXElement',
+          'JSXElement > *',
+          'JSXAttribute',
+          'JSXIdentifier',
+          'JSXNamespacedName',
+          'JSXMemberExpression',
+          'JSXSpreadAttribute',
+          'JSXExpressionContainer',
+          'JSXOpeningElement',
+          'JSXClosingElement',
+          'JSXText',
+          'JSXEmptyExpression',
+          'JSXSpreadChild',
+        ],
+        ignoreComments: false,
+      },
+    ],
+
+    // enforce line breaks between braces
+    // https://eslint.org/docs/rules/object-curly-newline
+    // @todo remove this when it's published
+    'object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: { minProperties: 4, multiline: true, consistent: true },
+        ObjectPattern: { minProperties: 4, multiline: true, consistent: true },
+        ImportDeclaration: { minProperties: 4, multiline: true, consistent: true },
+        ExportDeclaration: { minProperties: 4, multiline: true, consistent: true },
+      },
+    ],
+
+    // enforce "same line" or "multiple line" on object properties.
+    // https://eslint.org/docs/rules/object-property-newline
+    // @todo remove this when it's published
+    'object-property-newline': [
+      'error',
+      {
+        allowAllPropertiesOnSameLine: true,
+      },
+    ],
+
+    // Requires operator at the beginning of the line in multiline statements
+    // https://eslint.org/docs/rules/operator-linebreak
+    // @todo remove this when it's published
+    'operator-linebreak': [ 'error', 'before', { overrides: { '=': 'none' } } ],
   },
 }
