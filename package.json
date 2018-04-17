@@ -50,5 +50,6 @@
     "singleQuote": true,
     "trailingComma": "all",
     "semi": false
-  }
+  },
+  "private": true
 }
