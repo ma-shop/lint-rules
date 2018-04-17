@@ -118,7 +118,7 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/boolean-prop-naming.md
     // @todo remove this when it's published
     'react/boolean-prop-naming': [
-      'off',
+      'error',
       {
         propTypeNames: [ 'bool', 'mutuallyExclusiveTrueProps' ],
         rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+',

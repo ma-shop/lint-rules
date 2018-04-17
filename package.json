@@ -17,9 +17,14 @@
   "devDependencies": {
     "babel-eslint": "~8.2.3",
     "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-fat-arrow-same-line": "~0.1.0",
+    "eslint-plugin-fat-arrow-same-line":
+      "tjbenton/eslint-plugin-fat-arrow-same-line#cf6712f",
     "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react-native": "^3.2.1",
     "husky": "~0.14.3",
     "lerna": "^2.10.2",
     "lint-staged": "^7.0.4",
@@ -40,7 +45,7 @@
     "*.json": ["prettier --parser json --write", "git add"]
   },
   "eslintConfig": {
-    "extends": ["./packages/eslint-config-ma-shop/index.js"],
+    "extends": ["./packages/eslint-config-ma-shop-react/index.js"],
     "rules": {
       "quote-props": "off"
     }

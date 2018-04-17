@@ -16,7 +16,15 @@ module.exports = {
     'arrow-parens': [ 'error', 'always' ],
 
     // removes multi line implicit returns that makes arrow functions confusing
-    'fat-arrow-same-line/fat-arrow-same-line': 'error',
+    // @todo update the eslint-plugin-fat-arrow-same-line package once tyler's PR gets merged
+    // https://github.com/pzuraq/eslint-plugin-fat-arrow-same-line/pull/3
+    'fat-arrow-same-line/fat-arrow-same-line': [
+      'error',
+      {
+        allowTemplates: true,
+        allowJSX: true,
+      },
+    ],
 
     // enforce the spacing around the * in generator functions
     // https://eslint.org/docs/rules/generator-star-spacing
