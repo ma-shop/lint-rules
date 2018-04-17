@@ -46,7 +46,6 @@
     }
   },
   "prettier": {
-    "listDifferent": true,
     "singleQuote": true,
     "trailingComma": "all",
     "semi": false
