@@ -1,3 +1,46 @@
+let id_match
+{
+  // - declarations must end in lowercase letters
+  // - multiple capital letters in a row aren't allowed
+  // - numbers and symbols aren't allowed
+
+  // only allow the use of a $ at the beginning of a variable
+  // @example $woohoo
+  const jquery = '\\$?'
+  // @example wooHoo
+  const camel_case = '[a-z]+(?:[A-Z]{1}[a-z]+)?(?:[A-Z]{1}[a-z]+)?'
+  // Only allow specific accronyms on camel case and pascel case declarations.
+  // This prevents bad naming conventions.
+  // @examples
+  // wooHooUI
+  // WooHooUI
+  const accronyms = [ 'UI' ].join('|')
+  // ensure that snake case variables start and end with a letter
+  // @exmaple woo_hoo
+  const snake_case = '(?:[a-z][a-z_]+[a-z])'
+  // Allow pascel case. This only allows 1 capital letter to start with
+  // and then the rest are camel case rules. These should be used on
+  // used for components and classes.
+  // @examples
+  // Woohoo
+  // WooHoo
+  const pascel_case = `(?:[A-Z]{1})${camel_case}`
+  const overrides = [
+    // specific overrides for standard use cases
+    'e',
+    'i',
+    'n',
+    'a',
+    'b',
+    // specific overrides for terribly named libraries
+    'sha1',
+    'S3FS',
+    'i18n',
+    'I18n',
+  ].join('|')
+  id_match = `^${jquery}(?:(?:${camel_case}|${pascel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
+}
+
 module.exports = {
   rules: {
     // enforce line breaks after opening and before closing array brackets
@@ -83,8 +126,7 @@ module.exports = {
     ],
 
     // require identifiers to match the provided regular expression
-    // @todo update for alexa/google/react
-    'id-match': [ 'error', '^(?:[a-z]{2,}([A-Z]{1}[a-z]+)*$)|([a-z_$]+$)|(sha1)' ],
+    'id-match': [ 'error', id_match ],
 
     // enforce position of line comments
     // https://eslint.org/docs/rules/line-comment-position
