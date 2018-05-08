@@ -24,6 +24,7 @@ module.exports = {
         checkChildContextTypes: true,
       },
     ],
+
     // Enforce defaultProps declarations alphabetical sorting
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/jsx-sort-default-props.md
     // @todo remove this when it's published
@@ -78,6 +79,7 @@ module.exports = {
         },
       },
     ],
+
     // Prevent missing parentheses around multilines JSX
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/jsx-wrap-multilines.md
     // @todo remove this when it's published
@@ -93,6 +95,7 @@ module.exports = {
         prop: 'parens-new-line',
       },
     ],
+
     // Validate whitespace in and around the JSX opening and closing brackets
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/jsx-tag-spacing.md
     // @todo remove this when it's published
@@ -105,6 +108,7 @@ module.exports = {
         beforeClosing: 'never',
       },
     ],
+
     // Enforce a defaultProps definition for every prop that is not a required prop
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/require-default-props.md
     // @todo remove this when it's published
@@ -114,14 +118,14 @@ module.exports = {
         forbidDefaultForRequired: true,
       },
     ],
+
     // Enforces consistent naming for boolean props
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/boolean-prop-naming.md
-    // @todo remove this when it's published
     'react/boolean-prop-naming': [
       'error',
       {
         propTypeNames: [ 'bool', 'mutuallyExclusiveTrueProps' ],
-        rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+',
+        rule: '^(is|has|no)[A-Z]([A-Za-z0-9]?)+',
         message: '',
       },
     ],
