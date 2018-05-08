@@ -14,6 +14,7 @@ module.exports = {
       {
         props: true,
         ignorePropertyModificationsFor: [
+          'children', // for react
           'options', // for options
           'settings', // for settings
           'prev', // for reduce accumulators
