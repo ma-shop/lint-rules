@@ -8,8 +8,8 @@ let id_match
   // @example $woohoo
   const jquery = '\\$?'
   // @example wooHoo
-  const camel_case = '[a-z]+(?:[A-Z]{1}[a-z]+)?(?:[A-Z]{1}[a-z]+)?'
-  // Only allow specific accronyms on camel case and pascel case declarations.
+  const camel_case = '[a-z]+(?:[A-Z]{1}[a-z]+)?(?:[A-Z]{1}[a-z]+)?(?:[A-Z]{1}[a-z]+)?(?:[A-Z]{1}[a-z]+)?'
+  // Only allow specific accronyms on camel case and pascal case declarations.
   // This prevents bad naming conventions.
   // @examples
   // wooHooUI
@@ -18,13 +18,13 @@ let id_match
   // ensure that snake case variables start and end with a letter
   // @exmaple woo_hoo
   const snake_case = '(?:[a-z][a-z_]+[a-z])'
-  // Allow pascel case. This only allows 1 capital letter to start with
+  // Allow pascal case. This only allows 1 capital letter to start with
   // and then the rest are camel case rules. These should be used on
   // used for components and classes.
   // @examples
   // Woohoo
   // WooHoo
-  const pascel_case = `(?:[A-Z]{1})${camel_case}`
+  const pascal_case = `(?:[A-Z]{1})${camel_case}`
   const overrides = [
     // specific overrides for standard use cases
     'e',
@@ -32,13 +32,18 @@ let id_match
     'n',
     'a',
     'b',
+    'x',
+    'y',
+    'P',
+    // h1-h6 in react-native
+    '[Hh][1-6]',
     // specific overrides for terribly named libraries
     'sha1',
     'S3FS',
     'i18n',
     'I18n',
   ].join('|')
-  id_match = `^${jquery}(?:(?:${camel_case}|${pascel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
+  id_match = `^${jquery}(?:(?:${camel_case}|${pascal_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
 }
 
 module.exports = {
@@ -121,6 +126,9 @@ module.exports = {
           'n',
           'a',
           'b',
+          'x',
+          'y',
+          'P',
         ],
       },
     ],
@@ -170,7 +178,7 @@ module.exports = {
     'newline-per-chained-call': [ 'off' ],
 
     // disallow multiple empty lines and only one newline at the end
-    'no-multiple-empty-lines': [ 'error', { max: 3, maxEOF: 1 } ],
+    'no-multiple-empty-lines': [ 'error', { max: 4, maxEOF: 1 } ],
 
     // they are pointless and serve no purpose except for a hand full of cases
     // So save hundreds of characters per file
@@ -293,23 +301,26 @@ module.exports = {
 
     // enforce line breaks between braces
     // https://eslint.org/docs/rules/object-curly-newline
-    // @todo remove this when it's published
     'object-curly-newline': [
       'error',
       {
         ObjectExpression: {
-          minProperties: 4,
+          minProperties: 3,
           multiline: true,
           consistent: true,
         },
-        ObjectPattern: { minProperties: 4, multiline: true, consistent: true },
+        ObjectPattern: {
+          minProperties: 3,
+          multiline: true,
+          consistent: true,
+        },
         ImportDeclaration: {
-          minProperties: 4,
+          minProperties: 3,
           multiline: true,
           consistent: true,
         },
         ExportDeclaration: {
-          minProperties: 4,
+          minProperties: 3,
           multiline: true,
           consistent: true,
         },
