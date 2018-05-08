@@ -1,10 +1,9 @@
 {
   "name": "stylelint-config-ma-shop",
-  "version": "0.1.11",
+  "version": "0.1.15",
   "description": "Style lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
-  "repository":
-    "https://github.com/ma-shop/lint-rules/tree/master/packages/stylelint-config-ma-shop",
+  "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/stylelint-config-ma-shop",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
