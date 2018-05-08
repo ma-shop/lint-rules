@@ -30,6 +30,7 @@ module.exports = {
           '**/*.+(test|config).{js,mjs,jsx,vue}',
           '+(.storybook|storybook|stories)/**',
           'scripts/**',
+          'detox/**',
         ],
         optionalDependencies: false,
       },
