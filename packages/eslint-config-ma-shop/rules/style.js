@@ -315,12 +315,12 @@ module.exports = {
           consistent: true,
         },
         ImportDeclaration: {
-          minProperties: 3,
+          minProperties: 4,
           multiline: true,
           consistent: true,
         },
         ExportDeclaration: {
-          minProperties: 3,
+          minProperties: 4,
           multiline: true,
           consistent: true,
         },
@@ -329,17 +329,20 @@ module.exports = {
 
     // enforce "same line" or "multiple line" on object properties.
     // https://eslint.org/docs/rules/object-property-newline
-    // @todo remove this when it's published
-    'object-property-newline': [
-      'error',
-      {
-        allowAllPropertiesOnSameLine: true,
-      },
-    ],
+    'object-property-newline': 'error',
 
     // Requires operator at the beginning of the line in multiline statements
     // https://eslint.org/docs/rules/operator-linebreak
-    // @todo remove this when it's published
-    'operator-linebreak': [ 'error', 'before', { overrides: { '=': 'none' } } ],
+    'operator-linebreak': [
+      'error',
+      'before',
+      {
+        overrides: {
+          '=': 'none',
+          '&&': 'after',
+          '||': 'after',
+        },
+      },
+    ],
   },
 }
