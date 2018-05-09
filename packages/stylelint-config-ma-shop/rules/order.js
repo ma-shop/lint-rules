@@ -23,7 +23,11 @@ module.exports = {
         },
 
         { type: 'at-rule', name: 'media' }, // `@media` media queries
-        { type: 'at-rule', name: 'include', parameter: 'media' }, // `@include media` include style media query
+        {
+          type: 'at-rule',
+          name: 'include',
+          parameter: 'media',
+        }, // `@include media` include style media query
 
         // `&__foo` bem element, `.foo` nested element
         {
