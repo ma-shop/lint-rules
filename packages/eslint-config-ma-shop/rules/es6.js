@@ -23,6 +23,7 @@ module.exports = {
       {
         allowTemplates: true,
         allowJSX: true,
+        allowObjects: true,
       },
     ],
 

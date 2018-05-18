@@ -4,14 +4,12 @@
   "description": "This contains our Assets Linting Rules",
   "main": "index.js",
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "postinstall": "make lint-json"
   },
   "repository": "ma-shop/lint-rules",
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
-  "contributors": [
-    "Mike Sither <michaels@marketamerica.com>",
-    "Trevor Brindle <tabrindle@gmail.com> (https://github.com/tabrindle)"
-  ],
+  "contributors": ["Mike Sither <michaels@marketamerica.com>"],
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
