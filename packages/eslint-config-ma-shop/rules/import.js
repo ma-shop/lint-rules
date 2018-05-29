@@ -55,6 +55,10 @@ module.exports = {
       },
     ],
 
+    // turn this off because it prevents consistency which
+    // doesn't allow us to auto generate index files
+    'import/prefer-default-export': 'off',
+
     // this is different than airbnb because it targets different files
     'import/no-extraneous-dependencies': [
       'error',
