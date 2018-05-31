@@ -8,7 +8,7 @@ let id_match
   // @example $woohoo
   const jquery = '\\$?'
   // @example wooHoo
-  const camel_case = `[a-z]+${Array.from({ length: 5 }, () => '(?:[a-z]+[A-Z]{1}[a-z]+)?').join('')}`
+  const camel_case = `[a-z]{1}${Array.from({ length: 5 }, () => '(?:[a-z]*[A-Z]{1}[a-z]+)?').join('')}`
   // Only allow specific accronyms on camel case and pascal case declarations.
   // This prevents bad naming conventions.
   // @examples
@@ -43,7 +43,7 @@ let id_match
     'i18n',
     'I18n',
   ].join('|')
-  id_match = `^${jquery}(?:(?:${pascal_case}${camel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
+  id_match = `^${jquery}(?:(?:${pascal_case}${camel_case})|(?:${accronyms})|${snake_case}|(?:${overrides}))$`
 }
 
 module.exports = {
