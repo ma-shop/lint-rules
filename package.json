@@ -45,7 +45,8 @@
   "eslintConfig": {
     "extends": ["./packages/eslint-config-ma-shop-react/index.js"],
     "rules": {
-      "quote-props": "off"
+      "quote-props": "off",
+      "no-console": "error"
     }
   },
   "prettier": {
