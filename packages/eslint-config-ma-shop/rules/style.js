@@ -42,6 +42,7 @@ let id_match
     'S3FS',
     'i18n',
     'I18n',
+    'selectV2',
   ].join('|')
   id_match = `^${jquery}(?:(?:${pascal_case}${camel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
 }

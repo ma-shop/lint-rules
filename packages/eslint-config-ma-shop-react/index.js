@@ -6,7 +6,6 @@ module.exports = {
     'eslint-config-ma-shop',
   ].map(require.resolve),
   rules: {
-    'multiline-ternary': 'off',
     // Prevent usage of setState in componentDidMount
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-mount-set-state.md
     // this is necessary for server-rendering
@@ -22,16 +21,6 @@ module.exports = {
         forbid: [ 'any', 'array', 'object' ],
         checkContextTypes: true,
         checkChildContextTypes: true,
-      },
-    ],
-
-    // Enforce defaultProps declarations alphabetical sorting
-    // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/jsx-sort-default-props.md
-    // @todo remove this when it's published
-    'react/jsx-sort-default-props': [
-      'off',
-      {
-        ignoreCase: true,
       },
     ],
 
@@ -142,8 +131,8 @@ module.exports = {
 
     // Enforce consistent usage of destructuring assignment of props, state, and context
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/destructuring-assignment.md
-    // @todo remove when it's published
-    'react/destructuring-assignment': [ 'error', 'always' ],
+    // let the initial eslint rules handle the destructuring
+    'react/destructuring-assignment': 'off',
 
     // Prevent using this.state within a this.setState
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/no-access-state-in-setstate.md
@@ -170,6 +159,18 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/no-this-in-sfc.md
     // @todo remove when it's published
     'react/no-this-in-sfc': 'error',
+
+    // Prevent usage of .bind() in JSX props
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
+    'react/jsx-no-bind': [
+      'error',
+      {
+        ignoreRefs: true,
+        allowArrowFunctions: false,
+        allowFunctions: false,
+        allowBind: false,
+      },
+    ],
   },
 
   settings: {
