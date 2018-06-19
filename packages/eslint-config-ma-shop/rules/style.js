@@ -52,7 +52,8 @@ module.exports = {
     // enforce line breaks after opening and before closing array brackets
     // https://eslint.org/docs/rules/array-bracket-newline
     // @todo remove when airbnb enables it
-    'array-bracket-newline': [ 'error', { multiline: true, minItems: 4 } ], // alternative 'consistent'
+    // alternative 'consistent'
+    'array-bracket-newline': [ 'error', { multiline: true, minItems: 4 } ],
 
     // enforce line breaks between array elements
     // https://eslint.org/docs/rules/array-element-newline

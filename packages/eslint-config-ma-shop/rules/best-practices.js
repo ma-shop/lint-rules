@@ -1,5 +1,19 @@
 module.exports = {
   rules: {
+    'max-len': [
+      'error',
+      {
+        code: 100,
+        tabWidth: 2,
+        ignoreUrls: true,
+        ignoreRegExpLiterals: true,
+        ignorePattern: "\\s*(const|let)?([a-zA-Z-\\s]+[=:]\\s)?[`'][^\n]+[`'][,;]?$",
+        ignoreComments: false,
+        ignoreStrings: false,
+        ignoreTemplateLiterals: false,
+      },
+    ],
+
     // enforces getter/setter pairs in objects
     'accessor-pairs': [ 'error', { getWithoutSet: true } ],
 
