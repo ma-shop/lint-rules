@@ -155,10 +155,15 @@ module.exports = {
     // @todo remove when it's published
     'react/jsx-child-element-spacing': 'off',
 
-    // Prevent this from being used in stateless functional components
-    // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/no-this-in-sfc.md
-    // @todo remove when it's published
-    'react/no-this-in-sfc': 'error',
+    // disabled because it throws a lot of false positives
+    'react/no-this-in-sfc': 'off',
+
+    'react/prop-types': [
+      'error',
+      {
+        skipUndeclared: true,
+      },
+    ],
   },
 
   settings: {
