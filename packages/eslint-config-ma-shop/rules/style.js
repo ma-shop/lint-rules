@@ -35,6 +35,7 @@ let id_match
     'x',
     'y',
     'P',
+    't',
     // h1-h6 in react-native
     '[Hh][1-6]',
     // specific overrides for terribly named libraries
@@ -43,6 +44,7 @@ let id_match
     'i18n',
     'I18n',
     'selectV2',
+    '__DEV__',
   ].join('|')
   id_match = `^${jquery}(?:(?:${pascal_case}${camel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
 }
@@ -131,6 +133,7 @@ module.exports = {
           'x',
           'y',
           'P',
+          't',
         ],
       },
     ],

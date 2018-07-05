@@ -7,7 +7,9 @@ module.exports = {
         tabWidth: 2,
         ignoreUrls: true,
         ignoreRegExpLiterals: true,
-        ignorePattern: "\\s*(const|let)?([a-zA-Z-\\s]+[=:]\\s)?[`'][^\n]+[`'][,;]?$",
+        ignorePattern:
+          // eslint-disable-next-line max-len
+          "\\s*(console.(log|warn|info|error).*|(?:(const|let)?([a-zA-Z-\\s]+[=:]\\s)?[`'][^\n]+[`'][,;]?))$",
         ignoreComments: false,
         ignoreStrings: false,
         ignoreTemplateLiterals: false,
