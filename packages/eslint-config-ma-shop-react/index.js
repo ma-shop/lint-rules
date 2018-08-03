@@ -6,6 +6,9 @@ module.exports = {
     'eslint-config-ma-shop',
   ].map(require.resolve),
   rules: {
+    // this prevents easy customization
+    'react/no-typos': 'off',
+
     // Prevent usage of setState in componentDidMount
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-mount-set-state.md
     // this is necessary for server-rendering
@@ -114,7 +117,7 @@ module.exports = {
       'error',
       {
         propTypeNames: [ 'bool', 'mutuallyExclusiveTrueProps' ],
-        rule: '^(is|has|no)[A-Z]([A-Za-z0-9]?)+',
+        rule: '^(?:(is|has|no)[A-Z]([A-Za-z0-9]?)+)|if',
         message: '',
       },
     ],
