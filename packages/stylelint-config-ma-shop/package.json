@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-ma-shop",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "Style lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
   "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/stylelint-config-ma-shop",
