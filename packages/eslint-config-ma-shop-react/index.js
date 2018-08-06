@@ -43,7 +43,7 @@ module.exports = {
           '/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
           'instance-methods',
           'everything-else',
-          'rendering',
+          'render',
         ],
         groups: {
           lifecycle: [
