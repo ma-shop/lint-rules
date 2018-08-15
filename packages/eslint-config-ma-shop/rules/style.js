@@ -233,10 +233,6 @@ module.exports = {
     // https://eslint.org/docs/rules/multiline-comment-style
     'multiline-comment-style': 'off',
 
-    // specify whether double or single quotes should be used in JSX attributes
-    // https://eslint.org/docs/rules/jsx-quotes
-    'jsx-quotes': [ 'error', 'prefer-double' ],
-
     // require or disallow space before function opening parenthesis
     // https://eslint.org/docs/rules/space-before-function-paren
     'space-before-function-paren': [

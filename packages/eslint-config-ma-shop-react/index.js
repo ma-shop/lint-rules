@@ -4,6 +4,7 @@ module.exports = {
     'eslint-config-airbnb/rules/react',
     'eslint-config-airbnb/rules/react-a11y',
     'eslint-config-ma-shop',
+    './rules/general',
   ].map(require.resolve),
   rules: {
     // this prevents easy customization
@@ -173,7 +174,7 @@ module.exports = {
 
   settings: {
     react: {
-      version: '16.0',
+      version: '16.4',
     },
   },
 }
