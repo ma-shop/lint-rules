@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    'eslint-config-airbnb-base',
+    './rules/base',
     './rules/best-practices',
     './rules/node',
     './rules/style',

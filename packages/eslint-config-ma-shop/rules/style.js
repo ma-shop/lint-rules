@@ -7,6 +7,7 @@ let id_match
   // only allow the use of a $ at the beginning of a variable
   // @example $woohoo
   const jquery = '\\$?'
+  const unsafe = '(?:UNSAFE_)?'
   // @example wooHoo
   const camel_case = `[a-z]+${Array.from({ length: 5 }, () => '(?:[a-z]*[A-Z]{1}[a-z]+)?').join('')}`
   // Only allow specific accronyms on camel case and pascal case declarations.
@@ -46,7 +47,7 @@ let id_match
     'selectV2',
     '__DEV__',
   ].join('|')
-  id_match = `^${jquery}(?:(?:${pascal_case}${camel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
+  id_match = `^${unsafe}${jquery}(?:(?:${pascal_case}${camel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
 }
 
 module.exports = {

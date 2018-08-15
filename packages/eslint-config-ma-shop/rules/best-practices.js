@@ -9,7 +9,7 @@ module.exports = {
         ignoreRegExpLiterals: true,
         ignorePattern:
           // eslint-disable-next-line max-len
-          "\\s*(console.(log|warn|info|error).*|(?:(const|let)?([a-zA-Z-\\s]+[=:]\\s)?[`'][^\n]+[`'][,;]?))$",
+          "\\s*(console.(log|warn|info|error|debug).*|(?:(const|let)?([a-zA-Z-\\s]+[=:]\\s)?[`'][^\n]+[`'][,;]?))$",
         ignoreComments: false,
         ignoreStrings: false,
         ignoreTemplateLiterals: false,
