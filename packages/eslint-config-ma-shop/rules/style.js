@@ -180,9 +180,6 @@ module.exports = {
     // @todo remove when airbnb enables it
     'multiline-ternary': [ 'error', 'never' ],
 
-    // this is handled by prettier in a much better way
-    'newline-per-chained-call': [ 'off' ],
-
     // disallow multiple empty lines and only one newline at the end
     'no-multiple-empty-lines': [ 'error', { max: 4, maxEOF: 1 } ],
 
@@ -307,25 +304,17 @@ module.exports = {
       'error',
       {
         ObjectExpression: {
-          minProperties: 3,
+          minProperties: 4,
           multiline: true,
           consistent: true,
         },
         ObjectPattern: {
-          minProperties: 3,
-          multiline: true,
-          consistent: true,
-        },
-        ImportDeclaration: {
           minProperties: 4,
           multiline: true,
           consistent: true,
         },
-        ExportDeclaration: {
-          minProperties: 4,
-          multiline: true,
-          consistent: true,
-        },
+        ImportDeclaration: { minProperties: 7, consistent: true },
+        ExportDeclaration: { minProperties: 2, consistent: true },
       },
     ],
 
@@ -346,5 +335,7 @@ module.exports = {
         },
       },
     ],
+
+    'comma-dangle': [ 'error', 'always-multiline' ],
   },
 }

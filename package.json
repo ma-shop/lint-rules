@@ -34,7 +34,7 @@
     "stylelint-scss": "1.4.3"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["prettier-eslint --write", "eslint --fix", "git add"],
+    "*.{js,jsx}": ["eslint --fix", "git add"],
     "*.scss": [
       "prettier --parser scss --single-quote --write",
       "stylelint --fix",
