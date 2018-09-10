@@ -46,6 +46,7 @@ let id_match
     'I18n',
     'selectV2',
     '__DEV__',
+    '$',
   ].join('|')
   id_match = `^${unsafe}${jquery}(?:(?:${pascal_case}${camel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
 }
