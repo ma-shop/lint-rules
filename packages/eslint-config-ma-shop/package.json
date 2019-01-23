@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ma-shop",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "Base JS lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
   "repository":
