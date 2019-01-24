@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "prettier-stylelint-formatter": "~0.5.0",
-    "stylelint-config-shopify": "~4.0.0"
+    "stylelint-config-shopify": "~7.1.0"
   },
   "keywords": [
     "stylelint",
@@ -28,6 +28,6 @@
     "styleguide"
   ],
   "devDependencies": {
-    "stylelint": "~8.1.1"
+    "stylelint": "~9.10.1"
   }
 }
