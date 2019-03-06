@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ma-shop-react",
-  "version": "0.1.37",
+  "version": "0.1.39",
   "description": "React lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
   "repository":
@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-ma-shop": "^0.1.37",
+    "eslint-config-ma-shop": "^0.1.39",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0"
   },
