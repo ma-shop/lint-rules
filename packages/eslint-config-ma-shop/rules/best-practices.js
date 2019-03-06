@@ -29,6 +29,13 @@ module.exports = {
           'children', // for react
           'options', // for options
           'settings', // for settings
+          'config', // for config
+          'extras', // for extras
+          'defaultConfig', // for webpack
+          'baseConfig', // for webpack
+          'operation', // for graphql
+          'proto', // for prototypes
+          'product', // for products
           'prev', // for reduce accumulators
           'acc', // for reduce accumulators
           'e', // for e.returnvalue

@@ -15,7 +15,12 @@ let idMatch
   // @examples
   // wooHooUI
   // WooHooUI
-  const accronyms = [ 'UI' ].join('|')
+  const accronyms = [
+    'UI',
+    'X',
+    'Y',
+    'Z',
+  ].join('|')
   // ensure that snake case variables start and end with a letter
   // @exmaple woo_hoo
   const snakeCase = '(?:[a-z][a-z_]+[a-z])'
@@ -29,6 +34,7 @@ let idMatch
   const overrides = [
     // specific overrides for standard use cases
     '_',
+    '$',
     'a',
     'b',
     'e',
@@ -37,10 +43,12 @@ let idMatch
     'n',
     'P',
     't',
+    'w',
     'x',
     'y',
     // h1-h6 in react-native
     '[Hh][1-6]',
+    'address[1-7]',
     // specific overrides for terribly named libraries
     'sha1',
     'S3FS',
@@ -48,7 +56,9 @@ let idMatch
     'I18n',
     'selectV2',
     '__DEV__',
-    '__typename',
+    '__dirname',
+    '__filename',
+    'testID',
     '$',
   ].join('|')
   idMatch = `^${unsafe}${jquery}(?:(?:${pascalCase}${camelCase})(?:${accronyms})?|${snakeCase}|(?:${overrides}))$`
@@ -65,7 +75,8 @@ module.exports = {
     // enforce line breaks between array elements
     // https://eslint.org/docs/rules/array-element-newline
     // @todo remove when airbnb enables it
-    'array-element-newline': [ 'error', { multiline: true, minItems: 4 } ],
+    // 'array-element-newline': [ 'error', { multiline: true, minItems: 4 } ],
+    'array-element-newline': [ 'error', 'consistent' ],
 
     // enforce spacing inside array brackets
     'array-bracket-spacing': [ 'error', 'always' ],
@@ -131,6 +142,7 @@ module.exports = {
           'b',
           'e',
           'i',
+          'm',
           'n',
           'P',
           't',
@@ -338,5 +350,30 @@ module.exports = {
     ],
 
     'comma-dangle': [ 'error', 'always-multiline' ],
+
+    'no-underscore-dangle': [
+      'error', {
+        allow: [
+          '__typename', // for graphql
+          '_navigation', // for react-navigation `this.drawer._navigation.closeDrawer()`
+        ],
+        allowAfterThis: false,
+        allowAfterSuper: false,
+        enforceInMethodNames: true,
+      },
+    ],
+
+    camelcase: [
+      'error',
+      {
+        properties: 'never',
+        ignoreDestructuring: true,
+        allow: [
+          'UNSAFE_componentWillMount',
+          'UNSAFE_componentWillReceiveProps',
+          'UNSAFE_componentWillUpdate',
+        ],
+      },
+    ],
   },
 }
