@@ -19,6 +19,8 @@ module.exports = {
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
     // rule: https://eslint.org/docs/rules/no-param-reassign.html
+    // this is required because if not it will destroy performance in
+    // certain situations https://jsperf.com/param-reassign-options
     'no-param-reassign': [
       'error',
       {
@@ -60,5 +62,9 @@ module.exports = {
 
     // https://eslint.org/docs/rules/require-await
     'require-await': 'error',
+
+    // this allows use of the optional chaining
+    'no-unused-expressions': 'off',
+    'babel/no-unused-expressions': 'error',
   },
 }

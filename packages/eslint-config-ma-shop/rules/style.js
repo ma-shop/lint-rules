@@ -1,4 +1,4 @@
-let id_match
+let idMatch
 {
   // - declarations must end in lowercase letters
   // - multiple capital letters in a row aren't allowed
@@ -9,7 +9,7 @@ let id_match
   const jquery = '\\$?'
   const unsafe = '(?:UNSAFE_)?'
   // @example wooHoo
-  const camel_case = `[a-z]+${Array.from({ length: 5 }, () => '(?:[a-z]*[A-Z]{1}[a-z]+)?').join('')}`
+  const camelCase = `[a-z]+${Array.from({ length: 5 }, () => '(?:[a-z]*[A-Z]{1}[a-z]+)?').join('')}`
   // Only allow specific accronyms on camel case and pascal case declarations.
   // This prevents bad naming conventions.
   // @examples
@@ -18,25 +18,27 @@ let id_match
   const accronyms = [ 'UI' ].join('|')
   // ensure that snake case variables start and end with a letter
   // @exmaple woo_hoo
-  const snake_case = '(?:[a-z][a-z_]+[a-z])'
+  const snakeCase = '(?:[a-z][a-z_]+[a-z])'
   // Allow pascal case. This only allows 1 capital letter to start with
   // and then the rest are camel case rules. These should be used on
   // used for components and classes.
   // @examples
   // Woohoo
   // WooHoo
-  const pascal_case = '(?:[A-Z]{1})?'
+  const pascalCase = '(?:[A-Z]{1})?'
   const overrides = [
     // specific overrides for standard use cases
-    'e',
-    'i',
-    'n',
+    '_',
     'a',
     'b',
-    'x',
-    'y',
+    'e',
+    'i',
+    'm',
+    'n',
     'P',
     't',
+    'x',
+    'y',
     // h1-h6 in react-native
     '[Hh][1-6]',
     // specific overrides for terribly named libraries
@@ -46,9 +48,10 @@ let id_match
     'I18n',
     'selectV2',
     '__DEV__',
+    '__typename',
     '$',
   ].join('|')
-  id_match = `^${unsafe}${jquery}(?:(?:${pascal_case}${camel_case})(?:${accronyms})?|${snake_case}|(?:${overrides}))$`
+  idMatch = `^${unsafe}${jquery}(?:(?:${pascalCase}${camelCase})(?:${accronyms})?|${snakeCase}|(?:${overrides}))$`
 }
 
 module.exports = {
@@ -66,9 +69,6 @@ module.exports = {
 
     // enforce spacing inside array brackets
     'array-bracket-spacing': [ 'error', 'always' ],
-
-    // use camelcase for functions and snake case for data
-    camelcase: 'off',
 
     // disallow certain syntax forms
     // https://eslint.org/docs/rules/no-restricted-syntax
@@ -127,25 +127,25 @@ module.exports = {
         exceptions: [
           '_',
           '$',
+          'a',
+          'b',
           'e',
           'i',
           'n',
-          'a',
-          'b',
-          'x',
-          'y',
           'P',
           't',
+          'w',
+          'x',
+          'y',
         ],
       },
     ],
 
     // require identifiers to match the provided regular expression
-    'id-match': [ 'error', id_match ],
+    'id-match': [ 'error', idMatch ],
 
     // enforce position of line comments
     // https://eslint.org/docs/rules/line-comment-position
-    // @todo remove when airbnb enables it
     'line-comment-position': [
       'off',
       {

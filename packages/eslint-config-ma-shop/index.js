@@ -10,5 +10,6 @@ module.exports = {
     './rules/import',
   ].map(require.resolve),
   rules: {},
+  plugins: [ 'babel' ],
   parser: 'babel-eslint',
 }

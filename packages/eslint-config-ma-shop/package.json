@@ -13,6 +13,7 @@
   "dependencies": {
     "babel-eslint": "^9.0.0",
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-fat-arrow-same-line":
       "tjbenton/eslint-plugin-fat-arrow-same-line#f43587a",
     "eslint-plugin-import": "^2.14.0"
