@@ -11,3 +11,5 @@ const config = require('eslint-config-airbnb-base')
 delete config.parserOptions.ecmaFeatures
 config.parserOptions.ecmaVersion = 2018
 module.exports = config
+
+// something happened here
