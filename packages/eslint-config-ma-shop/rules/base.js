@@ -13,3 +13,4 @@ config.parserOptions.ecmaVersion = 2018
 module.exports = config
 
 // something happened here
+// something else happened here
