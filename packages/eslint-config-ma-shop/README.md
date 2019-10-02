@@ -8,14 +8,6 @@ Airbnb with a few minor modifications to their original rules so for
 
 ## Install
 
-#### npm
-
-```bash
-npm install eslint-config-ma-shop --save-dev
-```
-
-#### yarn
-
 ```bash
 yarn add eslint-config-ma-shop --dev
 ```
@@ -31,10 +23,6 @@ Add the following into your your `package.json`
 ```
 
 ## Prettier
-
-This config should always be use with [prettier](https://prettier.io/docs/en/)
-which is an opinionated code formatter that makes our code formatting consistent
-without having to be nitpicky on PRs.
 
 See [prettier setup](https://github.com/ma-shop/lint-rules#prettier) for details
 on the configuration

@@ -3,20 +3,18 @@
   "version": "0.1.40",
   "description": "Base JS lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
-  "repository":
-    "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop",
+  "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "MIT",
   "dependencies": {
-    "babel-eslint": "^9.0.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-fat-arrow-same-line":
-      "tjbenton/eslint-plugin-fat-arrow-same-line#f43587a",
-    "eslint-plugin-import": "^2.16.0"
+    "babel-eslint": "10.0.3",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-fat-arrow-same-line": "tjbenton/eslint-plugin-fat-arrow-same-line#f43587a",
+    "eslint-plugin-import": "2.18.2"
   },
   "keywords": [
     "eslint",

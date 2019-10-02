@@ -5,36 +5,18 @@
 
 This project houses all the linting rules for Market America | Shop.com
 
-## Prettier
-
-All config packages should always be use with
-[prettier](https://prettier.io/docs/en/) which is an opinionated code formatter
-that makes our code formatting consistent without having to be nitpicky on PRs.
-This helps the person reviewing code concentrate on what the code is doing and
-not how the code is formatted.
-
 ### Install
 
-We use [prettier-eslint-cli](https://www.npmjs.com/package/prettier-eslint-cli)
-to run [prettier](https://prettier.io/docs/en/) which will run `prettier`, then
-`eslint --fix`
-
-We also use
-[prettier-stylelint-formatter](https://www.npmjs.com/package/prettier-stylelint-formatter)
-to run [prettier](https://prettier.io/docs/en/) which will run `prettier` with
-`stylelint`
-
-#### npm
+We use [eslint](https://www.npmjs.com/package/eslint) to lint all of our projects
 
 ```bash
-npm install prettier-eslint-cli prettier-stylelint-formatter --save-dev
+yarn add eslint --dev
 ```
 
-#### yarn
+## Prettier
 
-```bash
-yarn add prettier-eslint-cli prettier-stylelint-formatter --dev
-```
+In addition to [eslint](https://www.npmjs.com/package/eslint) we also use [prettier](https://prettier.io/docs/en/)
+which is an opinionated code formatter. We **DO NOT** recommend using it for js files because it makes the code extremely hard to read. We do recommend using it with `json` files, and `md` files so you don't have to waste your time formatting them.
 
 ### Makefile
 
@@ -51,8 +33,7 @@ lint:
 
 # formats your js code with prettier, then lints them with eslint
 lint-js:
-	@prettier-eslint '+(app|src|test)/**/*.{js,jsx}' --write --list-different
-	@eslint --cache '+(app|src|test)/**/*.{js,jsx}'
+	@eslint --cache --fix '+(app|src|test)/**/*.{js,jsx}'
 
 # formats your style code with prettier, then lints them with stylelint
 lint-style:
@@ -76,14 +57,6 @@ a pull request this keeps all the code consistent. We currently use
 [lint-staged](https://www.npmjs.com/package/lint-staged) to pull the files that
 are staged for the commit.
 
-#### npm
-
-```bash
-npm install husky lint-staged --save-dev
-```
-
-#### yarn
-
 ```bash
 yarn add husky lint-staged --dev
 ```
@@ -100,20 +73,20 @@ just add clutter
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["prettier-eslint --write", "eslint --fix", "git add"],
+    "*.+(js|mjs|jsx)": ["eslint --cache --fix"],
     "*.scss": [
       "prettier --parser scss --single-quote --write",
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ],
-    "*.md": ["prettier --parser markdown --single-quote --write", "git add"],
-    "*.json": ["prettier --parser json --write", "git add"]
+    "*.md": ["prettier --write --parser markdown", "git add"],
+    "*.json": ["prettier --write --parser json", "git add"]
   },
   "eslintConfig": {
-    "extends": ["ma-shop"]
+    "extends": ["<config>"]
   },
+  "eslintIgnore": ["**/__snapshots__/**/*"],
   "stylelint": {
-    "extends": ["stylelint-config-ma-shop"]
+    "extends": ["<config>"]
   },
   "prettier": {
     "singleQuote": true,
@@ -123,6 +96,8 @@ just add clutter
   }
 }
 ```
+
+You will also want to add a `.prettierignore` file that contains the `package.json` file and any other files that are automatically generated, like `CHANGELOG.md`
 
 ## Contributing
 

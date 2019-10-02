@@ -3,16 +3,15 @@
   "version": "0.1.40",
   "description": "React Native lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
-  "repository":
-    "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop-react-native",
+  "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop-react-native",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "MIT",
   "dependencies": {
-    "eslint-config-ma-shop-react": "^0.1.40",
-    "eslint-plugin-react-native": "~3.2.1"
+    "eslint-config-ma-shop-react": "0.1.40",
+    "eslint-plugin-react-native": "3.7.0"
   },
   "keywords": [
     "eslint",
