@@ -4,8 +4,7 @@
   "description": "This contains our Assets Linting Rules",
   "main": "index.js",
   "scripts": {
-    "precommit": "lint-staged",
-    "postinstall": "make lint-json"
+    "precommit": "lint-staged"
   },
   "repository": "ma-shop/lint-rules",
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
