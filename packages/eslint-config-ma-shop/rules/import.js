@@ -15,10 +15,20 @@ module.exports = {
   },
 
   rules: {
-    // allow the following file extentions to be imported
-    // (without having to add the file extensions)
-    // @todo remove when it's published
-    'import/extensions': [ '.jsx', '.mjs', '.js' ],
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: true,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: [
+          'none',
+          'all',
+          'multiple',
+          'single',
+        ],
+      },
+    ],
 
     // Enforce a convention in module import order
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
@@ -68,13 +78,23 @@ module.exports = {
         // the following files can import devDependencies
         devDependencies: [
           'test/**',
+          'test-*/**',
           '**/*.+(test|config).{js,mjs,jsx,vue}',
           '+(.storybook|storybook|stories)/**',
           'scripts/**',
           'test-ui/**',
+          '**/webpack.config.js', // webpack config
+          '**/webpack.config.*.js', // webpack config
+          '**/rollup.config.js', // rollup config
+          '**/rollup.config.*.js', // rollup config
+          '**/gulpfile.js', // gulp config
+          '**/gulpfile.*.js', // gulp config
         ],
         optionalDependencies: false,
       },
     ],
+
+    // @todo look into this because it's throwing a lot of errors
+    'import/no-cycle': 'off',
   },
 }

@@ -73,5 +73,9 @@ module.exports = {
     // this allows use of the optional chaining
     'no-unused-expressions': 'off',
     'babel/no-unused-expressions': 'error',
+
+    'consistent-return': 'off',
+
+    'max-classes-per-file': [ 'error', 2 ],
   },
 }

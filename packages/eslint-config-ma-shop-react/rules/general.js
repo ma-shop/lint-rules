@@ -3,49 +3,18 @@ module.exports = {
     // this prevents easy customization
     'react/no-typos': 'off',
 
-    // Enforce component methods order
-    // @todo remove when it's published
-    'react/sort-comp': [
-      'error',
-      {
-        order: [
-          'static-methods',
-          'instance-variables',
-          'lifecycle',
-          '/^on.+$/',
-          'getters',
-          'setters',
-          '/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
-          'instance-methods',
-          'everything-else',
-          'rendering',
-        ],
-        groups: {
-          lifecycle: [
-            'displayName',
-            'propTypes',
-            'contextTypes',
-            'childContextTypes',
-            'mixins',
-            'statics',
-            'defaultProps',
-            'constructor',
-            'getDefaultProps',
-            'getInitialState',
-            'state',
-            'getChildContext',
-            'componentWillMount',
-            'componentDidMount',
-            'componentWillReceiveProps',
-            'shouldComponentUpdate',
-            'componentWillUpdate',
-            'componentDidUpdate',
-            'componentWillUnmount',
-          ],
-          rendering: [ '/^render.+$/', 'render' ],
-        },
-      },
-    ],
+    // @todo check if this works in the next update
+    // This currently throws way to many errors, also doesn't support private class variables.
+    'react/sort-comp': 'off',
+
+    // we do this all the time
+    'react/no-multi-comp': 'off',
+
+    // this is a useless rule, that we always have to disable
+    'react/no-did-update-set-state': 'off',
+
+    // let the initial eslint rules handle the destructuring
+    'react/destructuring-assignment': 'off',
 
     // Enforces consistent naming for boolean props
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/boolean-prop-naming.md
@@ -54,14 +23,10 @@ module.exports = {
       {
         propTypeNames: [ 'bool', 'mutuallyExclusiveTrueProps' ],
         rule: '^(?:(is|has|no)[A-Z]([A-Za-z0-9]?)+)|if',
-        message: '',
+        message: 'It is better if your prop ({{propName}}) matches this pattern: ({{pattern}})',
+        validateNested: true,
       },
     ],
-
-    // Enforce consistent usage of destructuring assignment of props, state, and context
-    // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/destructuring-assignment.md
-    // let the initial eslint rules handle the destructuring
-    'react/destructuring-assignment': 'off',
 
     // disabled because it throws a lot of false positives
     'react/no-this-in-sfc': 'off',
@@ -69,7 +34,24 @@ module.exports = {
     'react/prop-types': [
       'error',
       {
+        ignore: [ 'style', 'client' ],
+        customValidators: [],
         skipUndeclared: true,
+      },
+    ],
+
+    // it's allowed if you actually need it
+    'react/state-in-constructor': [ 'warn', 'never' ],
+
+    // this is off because it's stupid
+    'react/jsx-props-no-spreading': 'off',
+
+    'react/static-property-placement': [
+      'error',
+      'static public field',
+      {
+        defaultProps: 'property assignment',
+        propTypes: 'property assignment',
       },
     ],
   },
