@@ -9,6 +9,8 @@ module.exports = {
           '.mjs',
           '.js',
           '.json',
+          '.ts',
+          '.tsx',
         ],
       },
     },

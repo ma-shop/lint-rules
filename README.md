@@ -73,13 +73,18 @@ just add clutter
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.+(js|mjs|jsx)": ["eslint --cache --fix"],
+    "*.+(js|mjs|jsx|ts|tsx)": ["eslint --cache --fix", "git add"],
     "*.scss": [
       "prettier --parser scss --single-quote --write",
       "stylelint --fix"
     ],
     "*.md": ["prettier --write --parser markdown", "git add"],
     "*.json": ["prettier --write --parser json", "git add"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "eslintConfig": {
     "extends": ["<config>"]

@@ -10,11 +10,11 @@
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "MIT",
   "dependencies": {
-    "babel-eslint": "10.0.3",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-plugin-babel": "5.3.0",
+    "babel-eslint": "10.1.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-babel": "5.3.1",
     "eslint-plugin-fat-arrow-same-line": "tjbenton/eslint-plugin-fat-arrow-same-line#f43587a",
-    "eslint-plugin-import": "2.18.2"
+    "eslint-plugin-import": "2.28.1"
   },
   "keywords": [
     "eslint",

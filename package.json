@@ -3,48 +3,61 @@
   "version": "0.1.4",
   "description": "This contains our Assets Linting Rules",
   "main": "index.js",
-  "scripts": {
-    "precommit": "lint-staged"
-  },
+  "scripts": {},
   "repository": "ma-shop/lint-rules",
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
-  "contributors": ["Mike Sither <michaels@marketamerica.com>"],
+  "contributors": [
+    "Mike Sither <michaels@marketamerica.com>"
+  ],
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "babel-eslint": "10.0.3",
-    "eslint": "6.5.0",
-    "eslint-config-airbnb": "18.0.1",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-config-prettier": "6.3.0",
-    "eslint-plugin-babel": "5.3.0",
+    "@typescript-eslint/eslint-plugin": "6.5.0",
+    "@typescript-eslint/parser": "6.5.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "8.48.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-babel": "5.3.1",
     "eslint-plugin-fat-arrow-same-line": "tjbenton/eslint-plugin-fat-arrow-same-line#f43587a",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.14.3",
-    "eslint-plugin-react-hooks": "2.1.1",
-    "eslint-plugin-react-native": "3.7.0",
-    "husky": "3.0.7",
+    "eslint-plugin-import": "2.28.1",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-native": "4.0.0",
+    "husky": "8.0.3",
     "lerna": "3.16.4",
     "lint-staged": "9.4.0",
-    "prettier-eslint-cli": "5.0.0",
+    "prettier-eslint-cli": "7.1.0",
     "stylelint": "7.9.0",
     "stylelint-junit-formatter": "0.2.0",
     "stylelint-order": "~0.3.0",
     "stylelint-scss": "1.4.3"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --fix", "git add"],
+    "*.{js,mjs,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
     "*.scss": [
       "prettier --parser scss --single-quote --write",
       "stylelint --fix",
       "git add"
     ],
-    "*.md": ["prettier --parser markdown --single-quote --write", "git add"],
-    "*.json": ["prettier --parser json --write", "git add"]
+    "*.md": [
+      "prettier --parser markdown --single-quote --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --parser json --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["./packages/eslint-config-ma-shop-react/index.js"],
+    "extends": [
+      "./packages/eslint-config-ma-shop-react/index.js"
+    ],
     "rules": {
       "quote-props": "off",
       "no-console": "error"
@@ -55,5 +68,10 @@
     "trailingComma": "all",
     "semi": false
   },
-  "private": true
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }

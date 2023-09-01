@@ -2,6 +2,9 @@ module.exports = {
   settings: {
     ignore: [ '**/__snapshots__/**/*' ],
   },
+  env: {
+    jest: true,
+  },
   rules: {
     'no-undefined': 'off',
     'no-console': 'error',

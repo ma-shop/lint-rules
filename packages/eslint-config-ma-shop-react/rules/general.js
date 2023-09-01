@@ -1,4 +1,13 @@
 module.exports = {
+  extends: [ 'plugin:@typescript-eslint/recommended' ],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': [
+        '.ts',
+        '.tsx',
+      ],
+    },
+  },
   rules: {
     // this prevents easy customization
     'react/no-typos': 'off',
@@ -15,6 +24,16 @@ module.exports = {
 
     // let the initial eslint rules handle the destructuring
     'react/destructuring-assignment': 'off',
+
+    'react/jsx-filename-extension': [
+      'error',
+      {
+        'extensions': [
+          '.jsx',
+          '.tsx',
+        ],
+      },
+    ],
 
     // Enforces consistent naming for boolean props
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/boolean-prop-naming.md
