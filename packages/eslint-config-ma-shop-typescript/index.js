@@ -1,6 +1,4 @@
 module.exports = {
-  extends: [
-    './rules/general',
-  ].map(require.resolve),
+  extends: [ './rules/general' ].map(require.resolve),
   rules: {},
 }

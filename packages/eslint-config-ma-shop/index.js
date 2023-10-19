@@ -12,5 +12,5 @@ module.exports = {
   ].map(require.resolve),
   rules: {},
   plugins: [ 'babel' ],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
 }

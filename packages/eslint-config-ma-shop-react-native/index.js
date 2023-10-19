@@ -5,9 +5,7 @@ module.exports = {
   globals: {
     __DEV__: true,
   },
-  extends: [
-    './rules/general',
-  ].map(require.resolve),
+  extends: [ './rules/general' ].map(require.resolve),
   plugins: [ 'react-native' ],
   rules: {},
 }
