@@ -5,12 +5,10 @@ module.exports = {
       node: {
         // adds support for other filetypes
         extensions: [
-          '.jsx',
-          '.mjs',
           '.js',
           '.json',
-          '.ts',
-          '.tsx',
+          '.jsx',
+          '.mjs',
         ],
       },
     },

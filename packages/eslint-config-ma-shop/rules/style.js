@@ -1,4 +1,21 @@
 let idMatch
+const singleCharacterOverrides = [
+  // specific overrides for standard use cases
+  '_', // placeholder
+  '$', // jquery typically
+  'a', // a sort function
+  'b', // b sort function
+  'e', // event
+  'i', // index
+  'l', // local
+  'm', // args for search
+  'n', // number/next
+  'P', // prev
+  't', // translate
+  'w', // args for search
+  'x', // x axis
+  'y', // y axis
+]
 {
   // - declarations must end in lowercase letters
   // - multiple capital letters in a row aren't allowed
@@ -32,20 +49,7 @@ let idMatch
   // WooHoo
   const pascalCase = '(?:[A-Z]{1})?'
   const overrides = [
-    // specific overrides for standard use cases
-    '_',
-    '$',
-    'a',
-    'b',
-    'e',
-    'i',
-    'm',
-    'n',
-    'P',
-    't',
-    'w',
-    'x',
-    'y',
+    ...singleCharacterOverrides,
     // h1-h6 in react-native
     '[Hh][1-6]',
     'address[1-7]',
@@ -60,6 +64,8 @@ let idMatch
     '__filename',
     'testID',
     '$',
+    'alpha[0-9]',
+    'FC', // react functional component for typescript
   ].join('|')
   idMatch = `^${unsafe}${jquery}(?:(?:${pascalCase}${camelCase})(?:${accronyms})?|${snakeCase}|(?:${overrides}))$`
 }
@@ -135,21 +141,7 @@ module.exports = {
         min: 2,
         max: 50,
         properties: 'always',
-        exceptions: [
-          '_',
-          '$',
-          'a',
-          'b',
-          'e',
-          'i',
-          'm',
-          'n',
-          'P',
-          't',
-          'w',
-          'x',
-          'y',
-        ],
+        exceptions: singleCharacterOverrides,
       },
     ],
 

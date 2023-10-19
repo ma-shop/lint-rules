@@ -77,5 +77,9 @@ module.exports = {
     'consistent-return': 'off',
 
     'max-classes-per-file': [ 'error', 2 ],
+
+
+    // turned off till we can look into it closer
+    'default-param-last': 'off',
   },
 }

@@ -1,13 +1,4 @@
 module.exports = {
-  extends: [ 'plugin:@typescript-eslint/recommended' ],
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': [
-        '.ts',
-        '.tsx',
-      ],
-    },
-  },
   rules: {
     // this prevents easy customization
     'react/no-typos': 'off',
@@ -73,5 +64,9 @@ module.exports = {
         propTypes: 'property assignment',
       },
     ],
+
+    // this is turned off now because prop types are deprecated
+    // please use typescript instead
+    'react/default-props-match-prop-types': 'off',
   },
 }

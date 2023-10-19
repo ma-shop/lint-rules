@@ -1,16 +1,17 @@
 {
-  "name": "eslint-config-ma-shop-react-native",
+  "name": "eslint-config-ma-shop-typescript",
   "version": "0.2.0",
-  "description": "React Native lint rules for marketamerica | SHOP.COM",
+  "description": "React lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
-  "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop-react-native",
+  "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop-react",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "MIT",
   "dependencies": {
-    "eslint-plugin-react-native": "4.0.0"
+    "@typescript-eslint/eslint-plugin": "6.5.0",
+    "@typescript-eslint/parser": "6.5.0"
   },
   "keywords": [
     "eslint",
@@ -20,10 +21,8 @@
     "marketamerica",
     "shop",
     "ma-shop",
-    "react",
-    "native",
-    "react native",
     "javascript",
+    "react",
     "styleguide"
   ],
   "peerDependencies": {
