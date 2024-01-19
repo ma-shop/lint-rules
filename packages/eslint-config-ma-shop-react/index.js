@@ -4,6 +4,7 @@ module.exports = {
     'eslint-config-airbnb/rules/react-a11y',
     'eslint-config-airbnb/rules/react-hooks',
     './rules/general',
+    './rules/style',
   ].map(require.resolve),
   rules: {},
 }

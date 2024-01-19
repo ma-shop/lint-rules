@@ -1,3 +1,6 @@
+/* eslint-disable max-lines */
+
+
 let idMatch
 const singleCharacterOverrides = [
   // specific overrides for standard use cases
@@ -71,21 +74,548 @@ const singleCharacterOverrides = [
 }
 
 module.exports = {
+  plugins: [ 'fat-arrow-same-line' ],
   rules: {
     // enforce line breaks after opening and before closing array brackets
     // https://eslint.org/docs/rules/array-bracket-newline
     // @todo remove when airbnb enables it
     // alternative 'consistent'
-    'array-bracket-newline': [ 'error', { multiline: true, minItems: 4 } ],
+    '@stylistic/array-bracket-newline': [
+      'error', {
+        multiline: true,
+        minItems: 4,
+      },
+    ],
+
+    // enforce spacing inside array brackets
+    '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
 
     // enforce line breaks between array elements
     // https://eslint.org/docs/rules/array-element-newline
-    // @todo remove when airbnb enables it
-    // 'array-element-newline': [ 'error', { multiline: true, minItems: 4 } ],
-    'array-element-newline': [ 'error', 'consistent' ],
 
-    // enforce spacing inside array brackets
-    'array-bracket-spacing': [ 'error', 'always' ],
+    // 'array-element-newline': [ 'error', { multiline: true, minItems: 4 } ],
+    '@stylistic/array-element-newline': [ 'error', 'consistent' ],
+
+
+    // require parens in arrow function arguments
+    // https://eslint.org/docs/rules/arrow-parens
+    '@stylistic/arrow-parens': [ 'error', 'always' ],
+
+    '@stylistic/arrow-spacing': [
+      'error', {
+        before: true,
+        after: true,
+      },
+    ],
+
+    '@stylistic/block-spacing': [ 'error', 'always' ],
+
+    '@stylistic/brace-style': [ 'error', '1tbs', { allowSingleLine: true } ],
+
+    '@stylistic/comma-dangle': [ 'error', 'always-multiline' ],
+
+    '@stylistic/comma-spacing': [
+      'error', {
+        before: false,
+        after: true,
+      },
+    ],
+
+    '@stylistic/comma-style': [
+      'error',
+      'last',
+      {
+        exceptions: {
+          ArrayExpression: false,
+          ArrayPattern: false,
+          ArrowFunctionExpression: false,
+          CallExpression: false,
+          FunctionDeclaration: false,
+          FunctionExpression: false,
+          ImportDeclaration: false,
+          ObjectExpression: false,
+          ObjectPattern: false,
+          VariableDeclaration: false,
+          NewExpression: false,
+        },
+      },
+    ],
+
+    '@stylistic/computed-property-spacing': [
+      'error',
+      'never',
+    ],
+
+    '@stylistic/dot-location': [
+      'error',
+      'property',
+    ],
+
+    '@stylistic/eol-last': [
+      'error',
+      'always',
+    ],
+
+
+    '@stylistic/function-call-spacing': [
+      'error',
+      'never',
+    ],
+
+
+    // "@stylistic/function-call-argument-newline": [],
+
+    '@stylistic/function-paren-newline': [
+      'error',
+      'consistent',
+    ],
+
+    '@stylistic/generator-star-spacing': [
+      'error',
+      {
+        before: false,
+        after: true,
+      },
+    ],
+
+
+    // Enforce the location of arrow function bodies with implicit returns
+    // https://eslint.org/docs/rules/implicit-arrow-linebreak
+    // @todo remove this when it's published
+    '@stylistic/implicit-arrow-linebreak': [
+      'error',
+      'beside',
+    ],
+
+
+    // this option sets a specific tab width for your code
+    // https://eslint.org/docs/rules/indent
+    '@stylistic/indent': [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+        VariableDeclarator: 1,
+        outerIIFEBody: 1,
+        // MemberExpression: null,
+        FunctionDeclaration: {
+          parameters: 1,
+          body: 1,
+        },
+        FunctionExpression: {
+          parameters: 1,
+          body: 1,
+        },
+        CallExpression: {
+          arguments: 1,
+        },
+        ArrayExpression: 1,
+        ObjectExpression: 1,
+        ImportDeclaration: 1,
+        flatTernaryExpressions: false,
+        // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
+        ignoredNodes: [
+          'JSXElement',
+          'JSXElement > *',
+          'JSXAttribute',
+          'JSXIdentifier',
+          'JSXNamespacedName',
+          'JSXMemberExpression',
+          'JSXSpreadAttribute',
+          'JSXExpressionContainer',
+          'JSXOpeningElement',
+          'JSXClosingElement',
+          'JSXText',
+          'JSXEmptyExpression',
+          'JSXSpreadChild',
+        ],
+        ignoreComments: false,
+      },
+    ],
+
+
+    '@stylistic/indent-binary-ops': [ 'error', 2 ],
+
+
+    '@stylistic/key-spacing': [
+      'error',
+      {
+        beforeColon: false,
+        afterColon: true,
+      },
+    ],
+
+    '@stylistic/keyword-spacing': [
+      'error',
+      {
+        before: true,
+        after: true,
+        overrides: {
+          return: {
+            after: true,
+          },
+          throw: {
+            after: true,
+          },
+          case: {
+            after: true,
+          },
+        },
+      },
+    ],
+
+    '@stylistic/linebreak-style': [
+      'error',
+      'unix',
+    ],
+
+    '@stylistic/lines-around-comment': [ 'off' ],
+
+    // require or disallow an empty line between class members
+    // https://eslint.org/docs/rules/lines-between-class-members
+    // @todo remove this when it's published next major release
+    '@stylistic/lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterSingleLine: false },
+    ],
+
+    '@stylistic/max-len': [
+      'error',
+      {
+        code: 100,
+        tabWidth: 2,
+        ignoreUrls: true,
+        ignoreRegExpLiterals: true,
+        ignorePattern:
+          // eslint-disable-next-line @stylistic/max-len
+          "\\s*(console.(log|warn|info|error|debug).*|(?:(const|let)?([a-zA-Z-\\s]+[=:]\\s)?[`'][^\n]+[`'][,;]?))$",
+        ignoreComments: false,
+        ignoreStrings: false,
+        ignoreTemplateLiterals: false,
+      },
+    ],
+
+
+    // restrict the number of statements per line
+    // https://eslint.style/rules/default/max-statements-per-line
+    '@stylistic/max-statements-per-line': [ 'error', { max: 1 } ],
+
+    // https://eslint.style/rules/default/member-delimiter-style
+    // '@stylistic/member-delimiter-style': [],
+
+    // require multiline ternary
+    // https://eslint.style/rules/default/multiline-ternary
+    '@stylistic/multiline-ternary': [ 'error', 'never' ],
+
+    '@stylistic/new-parens': [
+      'error',
+      'always',
+    ],
+
+    '@stylistic/newline-per-chained-call': [
+      'error',
+      {
+        ignoreChainWithDepth: 4,
+      },
+    ],
+
+    '@stylistic/no-confusing-arrow': [
+      'error',
+      {
+        allowParens: true,
+      },
+    ],
+
+    // @todo look into
+    '@stylistic/no-extra-parens': [
+      'off',
+      'all',
+      {
+        conditionalAssign: true,
+        nestedBinaryExpressions: false,
+        returnAssign: false,
+        ignoreJSX: 'all',
+        enforceForArrowConditionals: false,
+      },
+    ],
+
+    '@stylistic/no-extra-semi': [ 'error' ],
+
+
+    '@stylistic/no-floating-decimal': [ 'error' ],
+
+    '@stylistic/no-mixed-operators': [
+      'error',
+      {
+        groups: [
+          [ '%', '**' ],
+          [ '%', '+' ],
+          [ '%', '-' ],
+          [ '%', '*' ],
+          [ '%', '/' ],
+          [ '/', '*' ],
+          [
+            '&',
+            '|',
+            '<<',
+            '>>',
+            '>>>',
+          ],
+          [
+            '==',
+            '!=',
+            '===',
+            '!==',
+          ],
+          [ '&&', '||' ],
+        ],
+        allowSamePrecedence: false,
+      },
+    ],
+
+    '@stylistic/no-mixed-spaces-and-tabs': [ 'error' ],
+
+    '@stylistic/no-multi-spaces': [
+      'error',
+      {
+        ignoreEOLComments: false,
+      },
+    ],
+
+    // disallow multiple empty lines and only one newline at the end
+    '@stylistic/no-multiple-empty-lines': [
+      'error', {
+        max: 4,
+        maxEOF: 1,
+      },
+    ],
+
+    '@stylistic/no-tabs': [ 'error' ],
+
+    '@stylistic/no-trailing-spaces': [
+      'error',
+      {
+        skipBlankLines: false,
+        ignoreComments: false,
+      },
+    ],
+
+    '@stylistic/no-whitespace-before-property': [ 'error' ],
+
+    '@stylistic/nonblock-statement-body-position': [
+      'error',
+      'beside',
+      {
+        overrides: {},
+      },
+    ],
+
+    // enforce line breaks between braces
+    // https://eslint.style/rules/default/object-curly-newline
+    '@stylistic/object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: {
+          minProperties: 4,
+          multiline: true,
+          consistent: true,
+        },
+        ObjectPattern: {
+          minProperties: 4,
+          multiline: true,
+          consistent: true,
+        },
+        ImportDeclaration: {
+          minProperties: 7,
+          consistent: true,
+        },
+        ExportDeclaration: {
+          minProperties: 2,
+          consistent: true,
+        },
+      },
+    ],
+
+    '@stylistic/object-curly-spacing': [
+      'error',
+      'always',
+    ],
+
+    // enforce "same line" or "multiple line" on object properties.
+    // https://eslint.style/rules/default/object-property-newline
+    '@stylistic/object-property-newline': [
+      'error',
+      {
+        allowAllPropertiesOnSameLine: true,
+        allowMultiplePropertiesPerLine: false,
+      },
+    ],
+
+    '@stylistic/one-var-declaration-per-line': [
+      'error',
+      'always',
+    ],
+
+    // Requires operator at the beginning of the line in multiline statements
+    // https://eslint.org/docs/rules/operator-linebreak
+    '@stylistic/operator-linebreak': [
+      'error',
+      'before',
+      {
+        overrides: {
+          '=': 'none',
+          '&&': 'after',
+          '||': 'after',
+        },
+      },
+    ],
+
+    '@stylistic/padded-blocks': [
+      'error',
+      {
+        blocks: 'never',
+        classes: 'never',
+        switches: 'never',
+      },
+      {
+        allowSingleLineBlocks: true,
+      },
+    ],
+
+    // @todo look back into this
+    '@stylistic/padding-line-between-statements': [ 'off' ],
+
+    '@stylistic/quote-props': [
+      'error',
+      'as-needed',
+      {
+        keywords: false,
+        unnecessary: true,
+        numbers: false,
+      },
+    ],
+
+    '@stylistic/quotes': [
+      'error',
+      'single',
+      {
+        avoidEscape: true,
+      },
+    ],
+
+    '@stylistic/rest-spread-spacing': [
+      'error',
+      'never',
+    ],
+
+    // they are pointless and serve no purpose except for a hand full of cases
+    // So save hundreds of characters per file
+    // Also they get added after transpiling
+    '@stylistic/semi': [ 'warn', 'never' ],
+
+    '@stylistic/semi-spacing': [
+      'error',
+      {
+        before: false,
+        after: true,
+      },
+    ],
+
+    '@stylistic/semi-style': [
+      'error',
+      'last',
+    ],
+
+    '@stylistic/space-before-blocks': [ 'error' ],
+
+    // require or disallow space before function opening parenthesis
+    // https://eslint.org/docs/rules/space-before-function-paren
+    '@stylistic/space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'always', // makes function declaration search able
+        asyncArrow: 'always',
+      },
+    ],
+
+    '@stylistic/space-in-parens': [
+      'error',
+      'never',
+    ],
+
+    '@stylistic/space-infix-ops': [ 'error' ],
+
+    '@stylistic/space-unary-ops': [
+      'error',
+      {
+        words: true,
+        nonwords: false,
+        overrides: {},
+      },
+    ],
+
+    // require or disallow a space immediately following the // or /* in a comment
+    // https://eslint.style/rules/default/spaced-comment
+    '@stylistic/spaced-comment': [
+      'error',
+      'always',
+      {
+        line: {
+          markers: [
+            '/',
+            '#',
+            '/#',
+            '-',
+            '+',
+          ],
+          exceptions: [
+            '-',
+            '+',
+            '/',
+            '#',
+          ],
+        },
+        block: {
+          markers: [ '!', '*#' ],
+          exceptions: [
+            '*',
+            '#',
+            '=',
+            '!',
+          ],
+          balanced: true,
+        },
+      },
+    ],
+
+    '@stylistic/switch-colon-spacing': [
+      'error',
+      {
+        after: true,
+        before: false,
+      },
+    ],
+
+    '@stylistic/template-curly-spacing': [ 'error' ],
+
+    '@stylistic/template-tag-spacing': [
+      'error',
+      'never',
+    ],
+
+    '@stylistic/wrap-iife': [
+      'error',
+      'outside',
+      {
+        functionPrototypeMethods: false,
+      },
+    ],
+
+    '@stylistic/wrap-regex': [ 'off' ],
+
+    '@stylistic/yield-star-spacing': [ 'error', 'after' ],
 
     // disallow certain syntax forms
     // https://eslint.org/docs/rules/no-restricted-syntax
@@ -175,179 +705,24 @@ module.exports = {
     // @todo remove when airbnb enables it
     'max-params': [ 'warn', 3 ],
 
-    // restrict the number of statements per line
-    // https://eslint.org/docs/rules/max-statements-per-line
-    // @todo remove when airbnb enables it
-    'max-statements-per-line': [ 'error', { max: 1 } ],
-
-    // require multiline ternary
-    // https://eslint.org/docs/rules/multiline-ternary
-    // @todo remove when airbnb enables it
-    'multiline-ternary': [ 'error', 'never' ],
-
-    // disallow multiple empty lines and only one newline at the end
-    'no-multiple-empty-lines': [ 'error', { max: 4, maxEOF: 1 } ],
-
-    // they are pointless and serve no purpose except for a hand full of cases
-    // So save hundreds of characters per file
-    // Also they get added after transpiling
-    semi: [ 'warn', 'never' ],
-
-    // require or disallow a space immediately following the // or /* in a comment
-    // https://eslint.org/docs/rules/spaced-comment
-    'spaced-comment': [
-      'error',
-      'always',
-      {
-        line: {
-          markers: [
-            '/',
-            '#',
-            '/#',
-            '-',
-            '+',
-          ],
-          exceptions: [
-            '-',
-            '+',
-            '/',
-            '#',
-          ],
-        },
-        block: {
-          markers: [ '!', '*#' ],
-          exceptions: [
-            '*',
-            '#',
-            '=',
-            '!',
-          ],
-          balanced: true,
-        },
-      },
-    ],
-
-    // require or disallow an empty line between class members
-    // https://eslint.org/docs/rules/lines-between-class-members
-    // @todo remove this when it's published next major release
-    'lines-between-class-members': [ 'error', 'always', { exceptAfterSingleLine: false } ],
 
     // enforce a particular style for multiline comments
     // https://eslint.org/docs/rules/multiline-comment-style
-    'multiline-comment-style': 'off',
+    'multiline-comment-style': [ 'error', 'separate-lines' ],
 
-    // require or disallow space before function opening parenthesis
-    // https://eslint.org/docs/rules/space-before-function-paren
-    'space-before-function-paren': [
-      'error',
-      {
-        anonymous: 'always',
-        named: 'always', // makes function declaration search able
-        asyncArrow: 'always',
-      },
-    ],
 
     // disallow else after a return in an if
     // https://eslint.org/docs/rules/no-else-return
     // @todo remove this when it's published
     'no-else-return': [ 'error', { allowElseIf: true } ],
 
-    // Enforce the location of arrow function bodies with implicit returns
-    // https://eslint.org/docs/rules/implicit-arrow-linebreak
-    // @todo remove this when it's published
-    'implicit-arrow-linebreak': [ 'error', 'beside' ],
-
-    // this option sets a specific tab width for your code
-    // https://eslint.org/docs/rules/indent
-    // @todo remove this when it's published
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-        VariableDeclarator: 1,
-        outerIIFEBody: 1,
-        // MemberExpression: null,
-        FunctionDeclaration: {
-          parameters: 1,
-          body: 1,
-        },
-        FunctionExpression: {
-          parameters: 1,
-          body: 1,
-        },
-        CallExpression: {
-          arguments: 1,
-        },
-        ArrayExpression: 1,
-        ObjectExpression: 1,
-        ImportDeclaration: 1,
-        flatTernaryExpressions: false,
-        // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
-        ignoredNodes: [
-          'JSXElement',
-          'JSXElement > *',
-          'JSXAttribute',
-          'JSXIdentifier',
-          'JSXNamespacedName',
-          'JSXMemberExpression',
-          'JSXSpreadAttribute',
-          'JSXExpressionContainer',
-          'JSXOpeningElement',
-          'JSXClosingElement',
-          'JSXText',
-          'JSXEmptyExpression',
-          'JSXSpreadChild',
-        ],
-        ignoreComments: false,
-      },
-    ],
-
-    // enforce line breaks between braces
-    // https://eslint.org/docs/rules/object-curly-newline
-    'object-curly-newline': [
-      'error',
-      {
-        ObjectExpression: {
-          minProperties: 4,
-          multiline: true,
-          consistent: true,
-        },
-        ObjectPattern: {
-          minProperties: 4,
-          multiline: true,
-          consistent: true,
-        },
-        ImportDeclaration: { minProperties: 7, consistent: true },
-        ExportDeclaration: { minProperties: 2, consistent: true },
-      },
-    ],
-
-    // enforce "same line" or "multiple line" on object properties.
-    // https://eslint.org/docs/rules/object-property-newline
-    'object-property-newline': 'error',
-
-    // Requires operator at the beginning of the line in multiline statements
-    // https://eslint.org/docs/rules/operator-linebreak
-    'operator-linebreak': [
-      'error',
-      'before',
-      {
-        overrides: {
-          '=': 'none',
-          '&&': 'after',
-          '||': 'after',
-        },
-      },
-    ],
-
-    'comma-dangle': [ 'error', 'always-multiline' ],
 
     'no-underscore-dangle': [
       'error', {
         allow: [
           '__typename', // for graphql
           '_navigation', // for react-navigation `this.drawer._navigation.closeDrawer()`
+          '_id',
         ],
         allowAfterThis: false,
         allowAfterSuper: false,
@@ -365,6 +740,23 @@ module.exports = {
           'UNSAFE_componentWillReceiveProps',
           'UNSAFE_componentWillUpdate',
         ],
+      },
+    ],
+
+
+    // enforces no braces where they can be omitted
+    // https://eslint.org/docs/rules/arrow-body-style
+    // turned off because it's handled by fat-arrow-same-line below
+    'arrow-body-style': 'off',
+    // removes multi line implicit returns that makes arrow functions confusing
+    // @todo update the eslint-plugin-fat-arrow-same-line package once tyler's PR gets merged
+    // https://github.com/pzuraq/eslint-plugin-fat-arrow-same-line/pull/3
+    'fat-arrow-same-line/fat-arrow-same-line': [
+      'error',
+      {
+        allowTemplates: true,
+        allowJSX: true,
+        allowObjects: true,
       },
     ],
   },

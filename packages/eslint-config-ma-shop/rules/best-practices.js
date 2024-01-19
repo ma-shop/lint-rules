@@ -1,20 +1,5 @@
 module.exports = {
   rules: {
-    'max-len': [
-      'error',
-      {
-        code: 100,
-        tabWidth: 2,
-        ignoreUrls: true,
-        ignoreRegExpLiterals: true,
-        ignorePattern:
-          // eslint-disable-next-line max-len
-          "\\s*(console.(log|warn|info|error|debug).*|(?:(const|let)?([a-zA-Z-\\s]+[=:]\\s)?[`'][^\n]+[`'][,;]?))$",
-        ignoreComments: false,
-        ignoreStrings: false,
-        ignoreTemplateLiterals: false,
-      },
-    ],
 
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
@@ -72,7 +57,7 @@ module.exports = {
 
     // this allows use of the optional chaining
     'no-unused-expressions': 'off',
-    'babel/no-unused-expressions': 'error',
+    '@babel/no-unused-expressions': 'error',
 
     'consistent-return': 'off',
 

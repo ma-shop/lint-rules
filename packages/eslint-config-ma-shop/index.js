@@ -1,16 +1,20 @@
 module.exports = {
+  parser: '@babel/eslint-parser',
+  plugins: [
+    '@babel',
+    '@stylistic',
+  ],
   extends: [
-    'eslint-config-airbnb-base/rules/strict',
-    './rules/base',
+    'eslint-config-airbnb-base',
+    // this disables all legacy configs since airbnb hasn't yet.
+    // Everything below this point will use stylistic
+    './rules/stylistic',
     './rules/best-practices',
     './rules/node',
     './rules/style',
     './rules/variables',
-    './rules/es6',
     './rules/errors',
     './rules/import',
   ].map(require.resolve),
   rules: {},
-  plugins: [ 'babel' ],
-  parser: '@babel/eslint-parser',
 }
