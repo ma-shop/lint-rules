@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ma-shop-react-native",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "React Native lint rules for marketamerica | SHOP.COM",
   "main": "index.js",
   "repository": "https://github.com/ma-shop/lint-rules/tree/master/packages/eslint-config-ma-shop-react-native",
@@ -27,8 +27,8 @@
     "styleguide"
   ],
   "peerDependencies": {
+    "eslint": "^8.56.0",
     "eslint-config-ma-shop": "*",
-    "eslint-config-ma-shop-react": "*",
-    "eslint": "^8.56.0"
+    "eslint-config-ma-shop-react": "*"
   }
 }
