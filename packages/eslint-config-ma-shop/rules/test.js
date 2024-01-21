@@ -16,14 +16,6 @@ module.exports = {
         skipComments: true,
       },
     ],
-    '@stylistic/max-lines': [
-      'error',
-      {
-        max: 500,
-        skipBlankLines: true,
-        skipComments: true,
-      },
-    ],
   },
   overrides: [
     {
@@ -31,7 +23,6 @@ module.exports = {
       files: [ '**/__snapshots__/**/*', '**/snapshots/**/*' ],
       rules: {
         'max-lines': 'off',
-        '@stylistic/max-lines': 'off',
         quotes: 'off',
         '@stylistic/quotes': 'off',
         semi: 'off',

@@ -28,6 +28,7 @@
   ],
   "peerDependencies": {
     "eslint-config-ma-shop": "*",
-    "eslint-config-ma-shop-react": "*"
+    "eslint-config-ma-shop-react": "*",
+    "eslint": "^8.56.0"
   }
 }
