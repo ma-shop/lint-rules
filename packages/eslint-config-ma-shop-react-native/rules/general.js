@@ -20,6 +20,5 @@ module.exports = {
 
     // @todo add this when it's been released
     'react-native/no-single-element-style-arrays': 'off',
-
   },
 }

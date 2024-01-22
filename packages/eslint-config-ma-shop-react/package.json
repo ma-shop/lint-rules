@@ -29,6 +29,6 @@
   ],
   "peerDependencies": {
     "eslint": "^8.56.0",
-    "eslint-config-ma-shop": "*"
+    "eslint-config-ma-shop": "0.3.1"
   }
 }

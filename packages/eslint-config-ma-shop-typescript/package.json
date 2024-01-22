@@ -26,6 +26,6 @@
     "styleguide"
   ],
   "peerDependencies": {
-    "eslint-config-ma-shop": "*"
+    "eslint-config-ma-shop": "0.3.1"
   }
 }

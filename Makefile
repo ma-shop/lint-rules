@@ -5,7 +5,6 @@ args = $(filter-out $@, $(MAKECMDGOALS))
 # installs node
 install:
 	@yarn install
-	@lerna bootstrap
 	@make lint-json
 
 # cleans the dist directory of every package
@@ -31,7 +30,7 @@ lint:
 
 # formats your js code with prettier, then lints them with eslint
 lint-js:
-	@eslint --cache --fix packages/*/index.js packages/*/rules/*.js
+	@eslint --cache --fix packages/*/*.js packages/*/rules/*.js
 
 # formats your markdown files with prettier
 lint-md:

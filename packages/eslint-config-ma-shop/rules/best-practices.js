@@ -56,8 +56,7 @@ module.exports = {
     'require-await': 'error',
 
     // this allows use of the optional chaining
-    'no-unused-expressions': 'off',
-    '@babel/no-unused-expressions': 'error',
+    'no-unused-expressions': 'error',
 
     'consistent-return': 'off',
 

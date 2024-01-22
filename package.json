@@ -9,29 +9,16 @@
   "contributors": [
     "Mike Sither <michaels@marketamerica.com>"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "7.23.7",
-    "@babel/eslint-parser": "7.23.3",
-    "@babel/eslint-plugin": "7.23.5",
-    "@babel/preset-env": "7.23.8",
-    "@stylistic/eslint-plugin": "1.5.3",
-    "@typescript-eslint/eslint-plugin": "6.18.1",
-    "@typescript-eslint/parser": "6.18.1",
     "eslint": "8.56.0",
-    "eslint-config-airbnb": "19.0.4",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-babel": "5.3.1",
-    "eslint-plugin-fat-arrow-same-line": "tjbenton/eslint-plugin-fat-arrow-same-line#f43587a",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-react": "7.33.2",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-react-native": "4.1.0",
+    "eslint-config-ma-shop": "0.3.1",
     "husky": "8.0.3",
-    "lerna": "3.16.4",
+    "lerna": "8.0.2",
     "lint-staged": "9.4.0",
     "prettier-eslint-cli": "7.1.0",
     "stylelint": "7.9.0",
@@ -60,8 +47,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "./packages/eslint-config-ma-shop/index.js",
-      "./packages/eslint-config-ma-shop-react/index.js"
+      "ma-shop"
     ],
     "rules": {
       "quote-props": "off",
