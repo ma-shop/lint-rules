@@ -727,6 +727,11 @@ module.exports = {
         allowAfterThis: false,
         allowAfterSuper: false,
         enforceInMethodNames: true,
+        allowAfterThisConstructor: false,
+        allowFunctionParams: false,
+        enforceInClassFields: false,
+        allowInArrayDestructuring: false,
+        allowInObjectDestructuring: false,
       },
     ],
 

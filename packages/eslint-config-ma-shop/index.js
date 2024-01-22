@@ -1,5 +1,9 @@
 module.exports = {
-  plugins: [ '@stylistic' ],
+  parser: '@babel/eslint-parser',
+  plugins: [
+    '@babel',
+    '@stylistic',
+  ],
   extends: [
     'eslint-config-airbnb-base',
     // this disables all legacy configs since airbnb hasn't yet.

@@ -31,6 +31,7 @@ module.exports = {
         '@stylistic/max-len': 'off',
         'no-tabs': 'off',
         '@stylistic/no-tabs': 'off',
+        'no-import-assign': 'off',
       },
     },
   ],

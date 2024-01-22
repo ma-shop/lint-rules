@@ -1,5 +1,10 @@
+const baseStyleRules = require('eslint-config-ma-shop/rules/style').rules
+
+
 module.exports = {
   rules: {
+    'no-underscore-dangle': baseStyleRules['no-underscore-dangle'],
+
     '@stylistic/jsx-child-element-spacing': [ 'off' ],
 
     '@stylistic/jsx-closing-bracket-location': [

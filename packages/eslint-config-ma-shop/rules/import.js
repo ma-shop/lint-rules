@@ -1,5 +1,4 @@
 module.exports = {
-  // @todo remove when it's published
   settings: {
     'import/resolver': {
       node: {
