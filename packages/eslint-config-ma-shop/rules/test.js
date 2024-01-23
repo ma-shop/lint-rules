@@ -16,6 +16,7 @@ module.exports = {
         skipComments: true,
       },
     ],
+    'no-import-assign': 'off',
   },
   overrides: [
     {

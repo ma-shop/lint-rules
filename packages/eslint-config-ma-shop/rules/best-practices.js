@@ -62,8 +62,11 @@ module.exports = {
 
     'max-classes-per-file': [ 'error', 2 ],
 
-
     // turned off till we can look into it closer
     'default-param-last': 'off',
+
+    // this is turned off because it doesn't handle single line
+    // promise functions very well
+    'no-promise-executor-return': 'off',
   },
 }
