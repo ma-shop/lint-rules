@@ -1,6 +1,5 @@
 module.exports = {
   rules: {
-
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
     // rule: https://eslint.org/docs/rules/no-param-reassign.html
@@ -30,6 +29,7 @@ module.exports = {
           'res', // for Express responses
           'response', // for Express responses
           '$scope', // for Angular 1 scopes
+          'state', // redux
         ],
       },
     ],

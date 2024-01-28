@@ -10,6 +10,9 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    ecmaVersion: 'latest',
+    // @note this is required for projects that don't use babel
+    requireConfigFile: false,
   },
   extends: [ './rules/general' ].map(require.resolve),
   plugins: [ 'react-native' ],

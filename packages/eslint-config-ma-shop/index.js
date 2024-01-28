@@ -1,6 +1,8 @@
 module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
+    // @note this is required for projects that don't use babel
+    requireConfigFile: false,
   },
   plugins: [ '@stylistic' ],
   extends: [
@@ -14,6 +16,7 @@ module.exports = {
     './rules/variables',
     './rules/errors',
     './rules/import',
+    './rules/unicorn',
   ].map(require.resolve),
   rules: {},
 }

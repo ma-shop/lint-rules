@@ -30,7 +30,7 @@ lint:
 
 # formats your js code with prettier, then lints them with eslint
 lint-js:
-	@eslint --cache --fix packages/*/*.js packages/*/rules/*.js
+	@eslint --cache --fix 'packages/*/*.js' 'packages/*/rules/*.js'
 
 # formats your markdown files with prettier
 lint-md:

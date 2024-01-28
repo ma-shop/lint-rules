@@ -15,10 +15,12 @@ const singleCharacterOverrides = [
   'n', // number/next
   'P', // prev
   't', // translate
+  'r', // renderIf
   'w', // args for search
   'x', // x axis
   'y', // y axis
 ]
+
 {
   // - declarations must end in lowercase letters
   // - multiple capital letters in a row aren't allowed
@@ -70,31 +72,37 @@ const singleCharacterOverrides = [
     'alpha[0-9]',
     'FC', // react functional component for typescript
   ].join('|')
+
   idMatch = `^${unsafe}${jquery}(?:(?:${pascalCase}${camelCase})(?:${accronyms})?|${snakeCase}|(?:${overrides}))$`
 }
+
+const vars = [ 'const', 'let', 'var' ]
 
 module.exports = {
   plugins: [ 'fat-arrow-same-line' ],
   rules: {
     // enforce line breaks after opening and before closing array brackets
-    // https://eslint.org/docs/rules/array-bracket-newline
-    // @todo remove when airbnb enables it
+    // https://eslint.style/rules/js/array-bracket-newline
     // alternative 'consistent'
     '@stylistic/array-bracket-newline': [
-      'error', {
+      'error',
+      {
         multiline: true,
         minItems: 4,
       },
     ],
 
     // enforce spacing inside array brackets
-    '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
+    '@stylistic/array-bracket-spacing': [
+      'error',
+      'always',
+    ],
 
     // enforce line breaks between array elements
-    // https://eslint.org/docs/rules/array-element-newline
-
-    // 'array-element-newline': [ 'error', { multiline: true, minItems: 4 } ],
-    '@stylistic/array-element-newline': [ 'error', 'consistent' ],
+    '@stylistic/array-element-newline': [
+      'error',
+      'consistent',
+    ],
 
 
     // require parens in arrow function arguments
@@ -156,18 +164,16 @@ module.exports = {
       'always',
     ],
 
-
     '@stylistic/function-call-spacing': [
       'error',
       'never',
     ],
 
-
-    // "@stylistic/function-call-argument-newline": [],
+    '@stylistic/function-call-argument-newline': [ 'error', 'consistent' ],
 
     '@stylistic/function-paren-newline': [
       'error',
-      'consistent',
+      'multiline-arguments',
     ],
 
     '@stylistic/generator-star-spacing': [
@@ -189,7 +195,7 @@ module.exports = {
 
 
     // this option sets a specific tab width for your code
-    // https://eslint.org/docs/rules/indent
+    // https://eslint.style/rules/default/indent
     '@stylistic/indent': [
       'error',
       2,
@@ -197,6 +203,7 @@ module.exports = {
         SwitchCase: 1,
         VariableDeclarator: 1,
         outerIIFEBody: 1,
+
         // MemberExpression: null,
         FunctionDeclaration: {
           parameters: 1,
@@ -213,6 +220,7 @@ module.exports = {
         ObjectExpression: 1,
         ImportDeclaration: 1,
         flatTernaryExpressions: false,
+
         // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
         ignoredNodes: [
           'JSXElement',
@@ -269,7 +277,37 @@ module.exports = {
       'unix',
     ],
 
-    '@stylistic/lines-around-comment': [ 'off' ],
+    '@stylistic/lines-around-comment': [
+      'off',
+      {
+        beforeBlockComment: false,
+        afterBlockComment: false,
+        beforeLineComment: true,
+        afterLineComment: false,
+
+        allowBlockStart: false,
+        allowBlockEnd: false,
+        allowObjectStart: true,
+        allowObjectEnd: false,
+        allowArrayStart: true,
+        allowArrayEnd: false,
+        allowClassStart: true,
+        allowClassEnd: false,
+        applyDefaultIgnorePatterns: true,
+        ignorePattern: '',
+        afterHashbangComment: true,
+
+        // typescript specific
+        allowEnumStart: true,
+        allowEnumEnd: false,
+        allowInterfaceStart: true,
+        allowInterfaceEnd: false,
+        allowModuleStart: true,
+        allowModuleEnd: false,
+        allowTypeStart: true,
+        allowTypeEnd: false,
+      },
+    ],
 
     // require or disallow an empty line between class members
     // https://eslint.org/docs/rules/lines-between-class-members
@@ -300,9 +338,6 @@ module.exports = {
     // restrict the number of statements per line
     // https://eslint.style/rules/default/max-statements-per-line
     '@stylistic/max-statements-per-line': [ 'error', { max: 1 } ],
-
-    // https://eslint.style/rules/default/member-delimiter-style
-    // '@stylistic/member-delimiter-style': [],
 
     // require multiline ternary
     // https://eslint.style/rules/default/multiline-ternary
@@ -341,7 +376,6 @@ module.exports = {
     ],
 
     '@stylistic/no-extra-semi': [ 'error' ],
-
 
     '@stylistic/no-floating-decimal': [ 'error' ],
 
@@ -458,7 +492,7 @@ module.exports = {
     ],
 
     // Requires operator at the beginning of the line in multiline statements
-    // https://eslint.org/docs/rules/operator-linebreak
+    // https://eslint.style/rules/default/operator-linebreak
     '@stylistic/operator-linebreak': [
       'error',
       'before',
@@ -483,8 +517,48 @@ module.exports = {
       },
     ],
 
-    // @todo look back into this
-    '@stylistic/padding-line-between-statements': [ 'off' ],
+    '@stylistic/padding-line-between-statements': [
+      'error',
+
+      // space before
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: [
+          ...vars,
+          'class',
+          'do',
+          'expression',
+          'for',
+          'function',
+          'if',
+          'return',
+          'switch',
+          'try',
+          'iife',
+          'block',
+          'export',
+          'multiline-block-like',
+        ],
+      },
+
+      // space after
+      {
+        blankLine: 'any',
+        prev: [
+          // eg 'use strict';
+          'directive',
+          'iife',
+        ],
+        next: '*',
+      },
+
+      // allow groups of the same type
+      { blankLine: 'any', prev: 'expression', next: 'expression' },
+      { blankLine: 'any', prev: 'if', next: 'if' },
+      { blankLine: 'any', prev: 'export', next: 'export' },
+      { blankLine: 'any', prev: vars, next: vars },
+    ],
 
     '@stylistic/quote-props': [
       'error',
@@ -623,6 +697,7 @@ module.exports = {
       'error',
 
       {
+
         // ```js
         // for (var variable in object) {
         //   if (object.hasOwnProperty(variable)) {
@@ -636,6 +711,7 @@ module.exports = {
       },
 
       {
+
         // function *foo() {
         //  // do something
         // }
@@ -738,7 +814,10 @@ module.exports = {
     camelcase: [
       'error',
       {
+        // @todo change this to 'always'
         properties: 'never',
+        ignoreGlobals: true,
+        ignoreImports: true,
         ignoreDestructuring: true,
         allow: [
           'UNSAFE_componentWillMount',
@@ -753,6 +832,7 @@ module.exports = {
     // https://eslint.org/docs/rules/arrow-body-style
     // turned off because it's handled by fat-arrow-same-line below
     'arrow-body-style': 'off',
+
     // removes multi line implicit returns that makes arrow functions confusing
     // @todo update the eslint-plugin-fat-arrow-same-line package once tyler's PR gets merged
     // https://github.com/pzuraq/eslint-plugin-fat-arrow-same-line/pull/3
