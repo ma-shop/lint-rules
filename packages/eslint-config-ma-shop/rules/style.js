@@ -1,6 +1,5 @@
 /* eslint-disable max-lines */
 
-
 let idMatch
 const singleCharacterOverrides = [
   // specific overrides for standard use cases
