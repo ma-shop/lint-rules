@@ -68,5 +68,16 @@ module.exports = {
     // this is turned off now because prop types are deprecated
     // please use typescript instead
     'react/default-props-match-prop-types': 'off',
+
+    'react/no-unused-class-component-methods': 'off',
+
+    'react/require-default-props': [
+      'error',
+      {
+        forbidDefaultForRequired: true,
+        classes: 'defaultProps',
+        functions: 'defaultArguments',
+      },
+    ],
   },
 }

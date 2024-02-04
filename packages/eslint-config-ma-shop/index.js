@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   parserOptions: {
     ecmaVersion: 'latest',
     // @note this is required for projects that don't use babel
