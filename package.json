@@ -3,7 +3,6 @@
   "version": "0.1.4",
   "description": "This contains our Assets Linting Rules",
   "main": "index.js",
-  "scripts": {},
   "repository": "ma-shop/lint-rules",
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "contributors": [
@@ -13,7 +12,6 @@
     "packages/*"
   ],
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "eslint": "8.56.0",
     "eslint-config-ma-shop": "*",
@@ -64,5 +62,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "packageManager": "yarn@4.1.0"
 }
