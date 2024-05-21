@@ -56,14 +56,8 @@ module.exports = {
     // this is off because it's stupid
     'react/jsx-props-no-spreading': 'off',
 
-    'react/static-property-placement': [
-      'error',
-      'static public field',
-      {
-        defaultProps: 'property assignment',
-        propTypes: 'property assignment',
-      },
-    ],
+    // turned off because react has moved to typescript
+    'react/static-property-placement': 'off',
 
     // this is turned off now because prop types are deprecated
     // please use typescript instead

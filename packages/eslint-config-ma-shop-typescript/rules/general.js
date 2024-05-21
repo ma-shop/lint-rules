@@ -67,14 +67,12 @@ module.exports = {
 
     '@typescript-eslint/no-empty-interface': 'error',
 
-    // "@typescript-eslint/no-explicit-any": "off",
+    '@typescript-eslint/no-explicit-any': 'off',
 
     // not enabled by default
     // "@typescript-eslint/no-parameter-properties": "off",
 
     '@typescript-eslint/ban-ts-comment': 'off',
-
-    // '@typescript-eslint/no-explicit-any': 'off',
 
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [

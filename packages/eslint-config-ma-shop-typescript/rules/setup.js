@@ -16,8 +16,11 @@ module.exports = {
       'error',
       'ignorePackages',
       {
+        js: 'never',
         ts: 'never',
         tsx: 'never',
+        jsx: 'never',
+        mjs: 'never',
       },
     ],
     'react/jsx-filename-extension': [

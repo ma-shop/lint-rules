@@ -68,5 +68,9 @@ module.exports = {
     // this is turned off because it doesn't handle single line
     // promise functions very well
     'no-promise-executor-return': 'off',
+
+    // this is turned off because js hoists variables which allows you to move things out of the way
+    // for esable props, and styles
+    'no-use-before-define': 'off',
   },
 }

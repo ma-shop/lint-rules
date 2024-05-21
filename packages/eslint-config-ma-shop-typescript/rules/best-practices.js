@@ -10,6 +10,10 @@ module.exports = {
         ],
         leadingUnderscore: 'allow',
         trailingUnderscore: 'forbid',
+        filter: {
+          match: false,
+          regex: 'testID',
+        },
       },
       {
         selector: [
@@ -43,6 +47,7 @@ module.exports = {
           'can',
           'did',
           'will',
+          'no',
         ],
       },
       {
@@ -54,6 +59,10 @@ module.exports = {
         ],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
+        filter: {
+          match: false,
+          regex: 'testID',
+        },
       },
       {
         selector: 'interface',
