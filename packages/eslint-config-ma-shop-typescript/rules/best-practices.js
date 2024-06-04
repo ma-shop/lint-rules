@@ -6,6 +6,7 @@ module.exports = {
         selector: 'default',
         format: [
           'strictCamelCase',
+          'StrictPascalCase',
           'UPPER_CASE',
         ],
         leadingUnderscore: 'allow',
