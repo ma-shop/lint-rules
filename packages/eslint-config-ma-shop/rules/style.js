@@ -70,6 +70,7 @@ const singleCharacterOverrides = [
     '$',
     'alpha[0-9]',
     'FC', // react functional component for typescript
+    'JSX',
   ].join('|')
 
   idMatch = `^${unsafe}${jquery}(?:(?:${pascalCase}${camelCase})(?:${accronyms})?|${snakeCase}|(?:${overrides}))$`
